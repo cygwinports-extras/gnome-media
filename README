@@ -1,0 +1,342 @@
+gnome-media
+------------------------------------------
+This package contains a suite of GNOME media tools:
+
+  - GNOME GStreamer-based audio mixer.
+  - ESD volume level meter.
+  - GNOME Sound Recorder.
+  - GStreamer Properties Capplet.
+  - Audio Profile library.
+
+Runtime requirements:
+  cygwin-1.5.20-1
+  GConf2-2.14.0-2
+  ORBit2-2.14.0-1
+  atk-1.10.3-1
+  gnome-vfs2-2.14.1-1
+  gstreamer010-0.10.6-1
+  gstreamer010-plugins-base-0.10.7-1
+  gstreamer010-plugins-gconf-0.10.3-1
+  gstreamer010-plugins-oss-0.10.3-1
+  gstreamer010-plugins-ximage-0.10.5-1
+  gtk2-x11-2.8.17-1
+  libbonobo2-2.14.0-1
+  libesound0-0.2.36-1
+  libglade2-2.5.1-1
+  libgnome2-2.14.1-1
+  libgnomeui2-2.14.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.20-1
+  autoconf2.5-2.59-2
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  cygport-0.2.1-1
+  gawk-3.1.5-1
+  gcc-core-3.4.4-1
+  intltool-0.35.0-1
+  libtool1.5-1.5.22-1
+  make-3.80-1
+  pkg-config-0.20-1
+  scrollkeeper-0.3.14-2
+  sed-4.1.5-1
+
+Canonical website:
+  http://www.gnome.org/
+
+Canonical download:
+  ftp://ftp.gnome.org/pub/gnome/sources/gnome-media/
+
+-------------------------------------------
+
+Build instructions:
+  unpack gnome-media-2.14.0-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./gnome-media-2.14.0-X.cygport all
+
+This will create:
+  /usr/src/gnome-media-2.14.0-X-src.tar.bz2
+  /usr/src/gnome-media-2.14.0-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /etc/gconf/schemas/CDDB-Slave2.schemas
+  /etc/gconf/schemas/gnome-audio-profiles.schemas
+  /etc/gconf/schemas/gnome-sound-recorder.schemas
+  /etc/gconf/schemas/gnome-volume-control.schemas
+  /etc/postinstall/gnome-media.sh
+  /etc/preremove/gnome-media.sh
+  /usr/bin/cddb-slave2-properties.exe
+  /usr/bin/cygcddb-slave2-0.dll
+  /usr/bin/cyggnome-media-profiles-0.dll
+  /usr/bin/gnome-audio-profiles-properties.exe
+  /usr/bin/gnome-sound-recorder.exe
+  /usr/bin/gnome-volume-control.exe
+  /usr/bin/gstreamer-properties.exe
+  /usr/bin/vumeter.exe
+  /usr/include/cddb-slave2/cddb-slave-client.h
+  /usr/include/gnome-media/profiles/audio-profile-choose.h
+  /usr/include/gnome-media/profiles/audio-profile-edit.h
+  /usr/include/gnome-media/profiles/audio-profile.h
+  /usr/include/gnome-media/profiles/audio-profiles-edit.h
+  /usr/include/gnome-media/profiles/gnome-media-profiles.h
+  /usr/lib/bonobo/servers/GNOME_Media_CDDBSlave2.server
+  /usr/lib/gnome-media-2.0/CDDBSlave2.exe
+  /usr/lib/gnome-media-2.0/cddb-track-editor.exe
+  /usr/lib/libcddb-slave2.dll.a
+  /usr/lib/libcddb-slave2.la
+  /usr/lib/libglade/2.0/cyggnome-media-profiles.dll
+  /usr/lib/libglade/2.0/libgnome-media-profiles.la
+  /usr/lib/libgnome-media-profiles.dll.a
+  /usr/lib/libgnome-media-profiles.la
+  /usr/lib/pkgconfig/gnome-media-profiles.pc
+  /usr/share/applications/cddb-slave.desktop
+  /usr/share/applications/gnome-sound-recorder.desktop
+  /usr/share/applications/gnome-volume-control.desktop
+  /usr/share/applications/gstreamer-properties.desktop
+  /usr/share/applications/reclevel.desktop
+  /usr/share/applications/vumeter.desktop
+  /usr/share/doc/Cygwin/gnome-media-2.14.0.README
+  /usr/share/doc/gnome-media-2.14.0/AUTHORS
+  /usr/share/doc/gnome-media-2.14.0/COPYING
+  /usr/share/doc/gnome-media-2.14.0/COPYING-DOCS
+  /usr/share/doc/gnome-media-2.14.0/ChangeLog
+  /usr/share/doc/gnome-media-2.14.0/INSTALL
+  /usr/share/doc/gnome-media-2.14.0/MAINTAINERS
+  /usr/share/doc/gnome-media-2.14.0/NEWS
+  /usr/share/doc/gnome-media-2.14.0/README
+  /usr/share/doc/gnome-media-2.14.0/TODO
+  /usr/share/gnome-media/glade/gnome-audio-profiles.glade2
+  /usr/share/gnome-media/pixmaps/3dsound.png
+  /usr/share/gnome-media/pixmaps/chain-broken.png
+  /usr/share/gnome-media/pixmaps/chain.png
+  /usr/share/gnome-media/pixmaps/headphones.png
+  /usr/share/gnome-media/pixmaps/mixer.png
+  /usr/share/gnome-media/pixmaps/noplay.png
+  /usr/share/gnome-media/pixmaps/norecord.png
+  /usr/share/gnome-media/pixmaps/phone.png
+  /usr/share/gnome-media/pixmaps/play.png
+  /usr/share/gnome-media/pixmaps/record.png
+  /usr/share/gnome-media/pixmaps/tone.png
+  /usr/share/gnome-media/pixmaps/video.png
+  /usr/share/gnome-sound-recorder/ui/ui.xml
+  /usr/share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
+  /usr/share/gnome/help/gnome-sound-recorder/C/gnome-sound-recorder.xml
+  /usr/share/gnome/help/gnome-sound-recorder/C/legal.xml
+  /usr/share/gnome/help/gnome-sound-recorder/uk/figures/grecord_window.png
+  /usr/share/gnome/help/gnome-sound-recorder/uk/gnome-sound-recorder.xml
+  /usr/share/gnome/help/gnome-sound-recorder/uk/legal.xml
+  /usr/share/gnome/help/gnome-volume-control/C/figures/gmix-prefs.png
+  /usr/share/gnome/help/gnome-volume-control/C/figures/gmix.png
+  /usr/share/gnome/help/gnome-volume-control/C/figures/gnome-volume-control_window.png
+  /usr/share/gnome/help/gnome-volume-control/C/gnome-volume-control.xml
+  /usr/share/gnome/help/gnome-volume-control/C/legal.xml
+  /usr/share/gnome/help/gnome-volume-control/uk/figures/gmix-prefs.png
+  /usr/share/gnome/help/gnome-volume-control/uk/figures/gmix.png
+  /usr/share/gnome/help/gnome-volume-control/uk/figures/gnome-volume-control_window.png
+  /usr/share/gnome/help/gnome-volume-control/uk/gnome-volume-control.xml
+  /usr/share/gnome/help/gnome-volume-control/uk/legal.xml
+  /usr/share/gnome/help/grecord/de/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/de/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/de/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/de/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/de/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/de/figures/grecord.png
+  /usr/share/gnome/help/grecord/de/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/de/grecord.xml
+  /usr/share/gnome/help/grecord/de/legal.xml
+  /usr/share/gnome/help/grecord/es/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/es/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/es/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/es/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/es/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/es/figures/grecord.png
+  /usr/share/gnome/help/grecord/es/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/es/grecord.xml
+  /usr/share/gnome/help/grecord/es/legal.xml
+  /usr/share/gnome/help/grecord/fr/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/fr/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/fr/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/fr/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/fr/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/fr/figures/grecord.png
+  /usr/share/gnome/help/grecord/fr/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/fr/grecord.xml
+  /usr/share/gnome/help/grecord/fr/legal.xml
+  /usr/share/gnome/help/grecord/it/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/it/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/it/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/it/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/it/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/it/figures/grecord.png
+  /usr/share/gnome/help/grecord/it/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/it/grecord.xml
+  /usr/share/gnome/help/grecord/it/legal.xml
+  /usr/share/gnome/help/grecord/ja/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/ja/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/ja/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/ja/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/ja/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/ja/figures/grecord.png
+  /usr/share/gnome/help/grecord/ja/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/ja/grecord.xml
+  /usr/share/gnome/help/grecord/ja/legal.xml
+  /usr/share/gnome/help/grecord/ko/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/ko/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/ko/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/ko/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/ko/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/ko/figures/grecord.png
+  /usr/share/gnome/help/grecord/ko/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/ko/grecord.xml
+  /usr/share/gnome/help/grecord/ko/legal.xml
+  /usr/share/gnome/help/grecord/sv/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/sv/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/sv/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/sv/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/sv/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/sv/figures/grecord.png
+  /usr/share/gnome/help/grecord/sv/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/sv/grecord.xml
+  /usr/share/gnome/help/grecord/sv/legal.xml
+  /usr/share/gnome/help/grecord/zh_CN/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/zh_CN/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/zh_CN/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/zh_CN/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/zh_CN/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/zh_CN/figures/grecord.png
+  /usr/share/gnome/help/grecord/zh_CN/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/zh_CN/grecord.xml
+  /usr/share/gnome/help/grecord/zh_CN/legal.xml
+  /usr/share/gnome/help/grecord/zh_TW/figures/grecord-prefs-path.png
+  /usr/share/gnome/help/grecord/zh_TW/figures/grecord-prefs-play.png
+  /usr/share/gnome/help/grecord/zh_TW/figures/grecord-prefs-rec.png
+  /usr/share/gnome/help/grecord/zh_TW/figures/grecord-prefs-sound.png
+  /usr/share/gnome/help/grecord/zh_TW/figures/grecord-prefs-ui.png
+  /usr/share/gnome/help/grecord/zh_TW/figures/grecord.png
+  /usr/share/gnome/help/grecord/zh_TW/figures/grecord_window.png
+  /usr/share/gnome/help/grecord/zh_TW/grecord.xml
+  /usr/share/gnome/help/grecord/zh_TW/legal.xml
+  /usr/share/gnome/help/gstreamer-properties/C/figures/gstreamer_properties_window.png
+  /usr/share/gnome/help/gstreamer-properties/C/gstreamer-properties.xml
+  /usr/share/gnome/help/gstreamer-properties/C/legal.xml  
+  /usr/share/gnome/help/gstreamer-properties/uk/figures/gstreamer_properties_window.png
+  /usr/share/gnome/help/gstreamer-properties/uk/gstreamer-properties.xml
+  /usr/share/gnome/help/gstreamer-properties/uk/legal.xml
+  /usr/share/gstreamer-properties/glade/gstreamer-properties.glade
+  /usr/share/gstreamer-properties/icons/gstreamer-properties.png
+  /usr/share/idl/GNOME_Media_CDDBSlave2.idl
+  /usr/share/locale/am/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/az/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/be/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/bg/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/bn/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/bs/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ca/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/cs/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/cy/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/da/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/de/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/el/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/en_CA/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/es/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/et/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/eu/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/fa/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/fi/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/fr/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ga/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/gl/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/gu/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/he/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/hi/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/hr/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/hu/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/id/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/it/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ja/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ko/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ku/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/lt/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/lv/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/mk/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ml/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/mn/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ms/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/nb/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ne/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/nl/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/nn/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/no/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/pa/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/pl/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/pt/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ro/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ru/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/rw/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/sk/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/sl/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/sq/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/sr/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/sr@Latn/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/sv/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/ta/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/th/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/tk/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/tr/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/uk/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/vi/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/wa/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/xh/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/omf/gnome-media/gnome-volume-control-C.omf
+  /usr/share/omf/gnome-media/gnome-volume-control-uk.omf
+  /usr/share/omf/gnome-media/grecord-C.omf
+  /usr/share/omf/gnome-media/grecord-de.omf
+  /usr/share/omf/gnome-media/grecord-es.omf
+  /usr/share/omf/gnome-media/grecord-fr.omf
+  /usr/share/omf/gnome-media/grecord-it.omf
+  /usr/share/omf/gnome-media/grecord-ja.omf
+  /usr/share/omf/gnome-media/grecord-ko.omf
+  /usr/share/omf/gnome-media/grecord-sv.omf
+  /usr/share/omf/gnome-media/grecord-uk.omf
+  /usr/share/omf/gnome-media/grecord-zh_CN.omf
+  /usr/share/omf/gnome-media/grecord-zh_TW.omf
+  /usr/share/omf/gnome-media/gstreamer-properties-C.omf
+  /usr/share/omf/gnome-media/gstreamer-properties-uk.omf
+  /usr/share/pixmaps/gnome-grecord.png
+  /usr/share/pixmaps/gnome-mixer.png
+  /usr/share/pixmaps/gnome-reclevel.png
+  /usr/share/pixmaps/gnome-vumeter.png
+  /usr/share/pixmaps/gstreamer-properties.png
+
+------------------
+
+Port Notes:
+
+----- version 2.14.2-1 -----
+Version bump.
+
+----- version 2.14.0-1 -----
+Version bump for GNOME 2.14.
+
+----- version 2.13.91-1 -----
+Version bump for gstreamer-0.10.
+
+----- version 2.13.5-1 -----
+Initial release for Cygwin.
+Includes upstream patch for gstreamer-0.10 support.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

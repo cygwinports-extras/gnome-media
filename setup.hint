@@ -1,0 +1,9 @@
+category: Gnome Audio Video
+requires: cygwin GConf2 ORBit2 atk gnome-vfs2 gstreamer010 gstreamer010-plugins-base gstreamer010-plugins-gconf gstreamer010-plugins-oss gstreamer010-plugins-ximage gtk2-x11 libbonobo2 libesound0 libglade2 libgnome2 libgnomeui2
+sdesc: "GNOME GStreamer media tools suite"
+ldesc: "This package contains a suite of GNOME media tools:
+  - GNOME GStreamer-based audio mixer.
+  - ESD volume level meter.
+  - GNOME Sound Recorder.
+  - GStreamer Properties Capplet.
+  - Audio Profile library."
