@@ -1,5 +1,5 @@
 category: Gnome Audio Video
-requires: cygwin GConf2 ORBit2 atk gdk-pixbuf2 gnome-vfs2 gstreamer010 gstreamer010-plugins-base gstreamer010-plugins-gconf gstreamer010-plugins-oss gstreamer010-plugins-ximage gtk2-x11 libbonobo2 libesound0 libglade2 libgnome2 libgnomeui2
+requires: cygwin GConf2 ORBit2 atk glib2 gnome-vfs2 gstreamer010 gstreamer010-plugins-base gstreamer010-plugins-gconf gstreamer010-plugins-oss gstreamer010-plugins-ximage gtk2-x11 libbonobo2 libesound0 libglade2 libgnome2 libgnomeui2 libintl8
 sdesc: "GNOME GStreamer media tools suite"
 ldesc: "This package contains a suite of GNOME media tools:
   - GNOME GStreamer-based audio mixer.
