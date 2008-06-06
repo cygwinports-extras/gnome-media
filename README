@@ -9,42 +9,42 @@ This package contains a suite of GNOME media tools:
   - Audio Profile library.
 
 Runtime requirements:
-  cygwin-1.5.24-2
-  GConf2-2.20.1-1
-  ORBit2-2.14.10-1
-  atk-1.20.0-1
-  gdk-pixbuf2-2.12.2-1
-  glib2-2.14.4-1
-  gnome-vfs2-2.20.1-1
-  gstreamer010-0.10.14-1
-  gstreamer010-plugins-base-0.10.14-1
+  cygwin-1.5.25-11
+  GConf2-2.22.0-1
+  ORBit2-2.14.12-1
+  atk-1.22.0-1
+  gdk-pixbuf2-2.12.9-1
+  glib2-2.16.3-1
+  gnome-vfs2-2.22.0-1
+  gstreamer010-0.10.19-1
+  gstreamer010-plugins-base-0.10.19-1
   gstreamer010-plugins-gconf
   gstreamer010-plugins-oss
   gstreamer010-plugins-ximage
-  gtk2-x11-2.12.2-1
-  libbonobo2-2.20.1-1
+  gtk2-x11-2.12.9-1
+  libbonobo2-2.22.0-1
   libesound0-0.2.38-1
   libglade2-2.6.2-1
-  libgnome2-2.20.1.1-1
-  libgnomeui2-2.20.1.1-1
+  libgnome2-2.22.0-1
+  libgnomeui2-2.22.1-1
   libintl8-0.15-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.24-2
   autoconf2.5-2.61-1
-  automake1.10-1.10-1
-  binutils-20060817-1
-  cygport-0.3.7-1
-  gawk-3.1.5-4
+  automake1.10-1.10.1-1
+  binutils-20080523-1
+  cygport-0.3.11-1
+  gawk-3.1.6-1
   gcc-core-3.4.4-3
-  gnome-common-2.20.0-1
-  gnome-doc-utils-0.12.0-1
-  intltool-0.36.2-1
-  libtool1.5-1.5.23a-2
+  gettext-devel-0.15-1
+  gnome-common-2.20.0-2
+  gnome-doc-utils-0.12.2-1
+  intltool-0.37.1-1
+  libtool-2.2.2-2
   make-3.81-1
   pkg-config-0.21-1
-  rarian-0.6.0-1
+  rarian-0.8.0-1
   sed-4.1.5-2
 
 Canonical website:
@@ -56,15 +56,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gnome-media-2.20.1-X-src.tar.bz2
+  unpack gnome-media-2.22.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gnome-media-2.20.1-X.cygport all
+  cygport ./gnome-media-2.22.0-X.cygport all
 
 This will create:
-  /usr/src/gnome-media-2.20.1-X-src.tar.bz2
-  /usr/src/gnome-media-2.20.1-X.tar.bz2
+  /usr/src/gnome-media-2.22.0-X-src.tar.bz2
+  /usr/src/gnome-media-2.22.0-X.tar.bz2
 
 -------------------------------------------
 
@@ -106,16 +106,15 @@ Files included in the binary package:
   /usr/share/applications/gstreamer-properties.desktop
   /usr/share/applications/reclevel.desktop
   /usr/share/applications/vumeter.desktop
-  /usr/share/doc/Cygwin/gnome-media-2.20.1.README
-  /usr/share/doc/gnome-media-2.20.1/AUTHORS
-  /usr/share/doc/gnome-media-2.20.1/COPYING
-  /usr/share/doc/gnome-media-2.20.1/COPYING-DOCS
-  /usr/share/doc/gnome-media-2.20.1/ChangeLog
-  /usr/share/doc/gnome-media-2.20.1/INSTALL
-  /usr/share/doc/gnome-media-2.20.1/MAINTAINERS
-  /usr/share/doc/gnome-media-2.20.1/NEWS
-  /usr/share/doc/gnome-media-2.20.1/README
-  /usr/share/doc/gnome-media-2.20.1/TODO
+  /usr/share/doc/gnome-media-2.22.0/AUTHORS
+  /usr/share/doc/gnome-media-2.22.0/COPYING
+  /usr/share/doc/gnome-media-2.22.0/COPYING-DOCS
+  /usr/share/doc/gnome-media-2.22.0/ChangeLog
+  /usr/share/doc/gnome-media-2.22.0/INSTALL
+  /usr/share/doc/gnome-media-2.22.0/MAINTAINERS
+  /usr/share/doc/gnome-media-2.22.0/NEWS
+  /usr/share/doc/gnome-media-2.22.0/README
+  /usr/share/doc/gnome-media-2.22.0/TODO
   /usr/share/gnome-media/glade/gnome-audio-profiles.glade2
   /usr/share/gnome-media/pixmaps/3dsound.png
   /usr/share/gnome-media/pixmaps/chain-broken.png
@@ -133,12 +132,18 @@ Files included in the binary package:
   /usr/share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/C/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/C/legal.xml
+  /usr/share/gnome/help/gnome-sound-recorder/ca/figures/grecord_window.png
+  /usr/share/gnome/help/gnome-sound-recorder/ca/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/es/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/es/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/fr/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/fr/gnome-sound-recorder.xml
+  /usr/share/gnome/help/gnome-sound-recorder/it/figures/grecord_window.png
+  /usr/share/gnome/help/gnome-sound-recorder/it/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/oc/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/oc/gnome-sound-recorder.xml
+  /usr/share/gnome/help/gnome-sound-recorder/ru/figures/grecord_window.png
+  /usr/share/gnome/help/gnome-sound-recorder/ru/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/sv/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/sv/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/uk/figures/grecord_window.png
@@ -146,23 +151,35 @@ Files included in the binary package:
   /usr/share/gnome/help/gnome-volume-control/C/figures/gnome-volume-control_window.png
   /usr/share/gnome/help/gnome-volume-control/C/gnome-volume-control.xml
   /usr/share/gnome/help/gnome-volume-control/C/legal.xml
+  /usr/share/gnome/help/gnome-volume-control/ca/figures/gnome-volume-control_window.png
+  /usr/share/gnome/help/gnome-volume-control/ca/gnome-volume-control.xml
   /usr/share/gnome/help/gnome-volume-control/es/figures/gnome-volume-control_window.png
   /usr/share/gnome/help/gnome-volume-control/es/gnome-volume-control.xml
   /usr/share/gnome/help/gnome-volume-control/fr/figures/gnome-volume-control_window.png
   /usr/share/gnome/help/gnome-volume-control/fr/gnome-volume-control.xml
+  /usr/share/gnome/help/gnome-volume-control/it/figures/gnome-volume-control_window.png
+  /usr/share/gnome/help/gnome-volume-control/it/gnome-volume-control.xml
   /usr/share/gnome/help/gnome-volume-control/oc/figures/gnome-volume-control_window.png
   /usr/share/gnome/help/gnome-volume-control/oc/gnome-volume-control.xml
+  /usr/share/gnome/help/gnome-volume-control/ru/figures/gnome-volume-control_window.png
+  /usr/share/gnome/help/gnome-volume-control/ru/gnome-volume-control.xml
   /usr/share/gnome/help/gnome-volume-control/sv/figures/gnome-volume-control_window.png
   /usr/share/gnome/help/gnome-volume-control/sv/gnome-volume-control.xml
   /usr/share/gnome/help/gstreamer-properties/C/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/C/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/C/legal.xml
+  /usr/share/gnome/help/gstreamer-properties/ca/figures/gstreamer_properties_window.png
+  /usr/share/gnome/help/gstreamer-properties/ca/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/es/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/es/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/fr/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/fr/gstreamer-properties.xml
+  /usr/share/gnome/help/gstreamer-properties/it/figures/gstreamer_properties_window.png
+  /usr/share/gnome/help/gstreamer-properties/it/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/oc/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/oc/gstreamer-properties.xml
+  /usr/share/gnome/help/gstreamer-properties/ru/figures/gstreamer_properties_window.png
+  /usr/share/gnome/help/gstreamer-properties/ru/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/sv/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/sv/gstreamer-properties.xml
   /usr/share/gstreamer-properties/glade/gstreamer-properties.glade
@@ -174,8 +191,10 @@ Files included in the binary package:
   /usr/share/idl/GNOME_Media_CDDBSlave2.idl
   /usr/share/locale/am/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/as/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/az/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/be/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/be@latin/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/bg/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/bn/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/bn_IN/LC_MESSAGES/gnome-media-2.0.mo
@@ -248,10 +267,38 @@ Files included in the binary package:
   /usr/share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-C.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-ca.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-es.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-fr.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-it.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-oc.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-ru.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-sv.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-uk.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-C.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-ca.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-es.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-fr.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-it.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-oc.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-ru.omf
+  /usr/share/omf/gnome-volume-control/gnome-volume-control-sv.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-C.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-ca.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-es.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-fr.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-it.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-oc.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-ru.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-sv.omf
 
 ------------------
 
 Port Notes:
+
+----- version 2.22.0-1 -----
+Version bump for GNOME 2.22.
 
 ----- version 2.20.1-1 -----
 Version bump for GNOME 2.20.

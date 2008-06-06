@@ -1,0 +1,1523 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/cddb-slave2/gnet-private.h src/gnome-media-2.22.0/cddb-slave2/gnet-private.h
+--- origsrc/gnome-media-2.22.0/cddb-slave2/gnet-private.h	2008-03-10 15:21:03.000000000 -0500
++++ src/gnome-media-2.22.0/cddb-slave2/gnet-private.h	2008-06-03 00:49:11.406250000 -0500
+@@ -68,7 +68,7 @@
+ #include <resolv.h>
+ #include <netdb.h>
+ 
+-#ifndef __socklen_t_defined
++#if !defined(__socklen_t_defined) && !defined(socklen_t)
+ typedef guint32 socklen_t;
+ #endif
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c
+--- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c	2008-03-10 15:21:04.000000000 -0500
++++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c	2008-06-03 00:49:11.421875000 -0500
+@@ -101,84 +101,6 @@
+ 	return item;
+ }
+ 
+-/*
+-static GList *
+-egg_recent_item_copy_groups (const GList *list)
+-{
+-	GList *newlist = NULL;
+-
+-	while (list) {
+-		gchar *group = (gchar *)list->data;
+-
+-		newlist = g_list_prepend (newlist, g_strdup (group));
+-
+-		list = list->next;
+-	}
+-
+-	return newlist;
+-}
+-
+-
+-EggRecentItem *
+-egg_recent_item_copy (const EggRecentItem *item)
+-{
+-	EggRecentItem *newitem;
+-
+-	newitem = egg_recent_item_new ();
+-	newitem->uri = g_strdup (item->uri);
+-	if (item->mime_type)
+-		newitem->mime_type = g_strdup (item->mime_type);
+-	newitem->mime_type_is_explicit = item->mime_type_is_explicit
+-	newitem->timestamp = item->timestamp;
+-	newitem->private_data = item->private_data;
+-	newitem->groups = egg_recent_item_copy_groups (item->groups);
+-
+-	return newitem;
+-}
+-*/
+-
+-/*
+-EggRecentItem *
+-egg_recent_item_new_valist (const gchar *uri, va_list args)
+-{
+-	EggRecentItem *item;
+-	EggRecentArg arg;
+-	gchar *str1;
+-	gchar *str2;
+-	gboolean priv;
+-
+-	item = egg_recent_item_new ();
+-
+-	arg = va_arg (args, EggRecentArg);
+-
+-	while (arg != EGG_RECENT_ARG_NONE) {
+-		switch (arg) {
+-			case EGG_RECENT_ARG_MIME_TYPE:
+-				str1 = va_arg (args, gchar*);
+-
+-				egg_recent_item_set_mime_type (item, str1);
+-			break;
+-			case EGG_RECENT_ARG_GROUP:
+-				str1 = va_arg (args, gchar*);
+-
+-				egg_recent_item_add_group (item, str1);
+-			break;
+-			case EGG_RECENT_ARG_PRIVATE:
+-				priv = va_arg (args, gboolean);
+-
+-				egg_recent_item_set_private (item, priv);
+-			break;
+-			default:
+-			break;
+-		}
+-
+-		arg = va_arg (args, EggRecentArg);
+-	}
+-
+-	return item;
+-}
+-*/
+-
+ static void
+ egg_recent_item_update_mime_type (EggRecentItem *item)
+ {
+@@ -288,6 +210,70 @@
+ 	return g_string_free (string, FALSE);
+ }
+ 
++static gchar *
++get_uri_shortname_for_display (GnomeVFSURI *uri)
++{
++	gchar    *name;	
++	gboolean  validated;
++
++	validated = FALSE;
++	name = gnome_vfs_uri_extract_short_name (uri);
++	
++	if (name == NULL)
++	{
++		name = gnome_vfs_uri_to_string (uri, GNOME_VFS_URI_HIDE_PASSWORD);
++	}
++	else if (g_ascii_strcasecmp (uri->method_string, "file") == 0)
++	{
++		gchar *text_uri;
++		gchar *local_file;
++		text_uri = gnome_vfs_uri_to_string (uri, GNOME_VFS_URI_HIDE_PASSWORD);
++		local_file = gnome_vfs_get_local_path_from_uri (text_uri);
++		
++		if (local_file != NULL)
++		{
++			g_free (name);
++			name = g_filename_display_basename (local_file);
++			validated = TRUE;
++		}
++		
++		g_free (local_file);
++		g_free (text_uri);
++	} 
++	else if (!gnome_vfs_uri_has_parent (uri)) 
++	{
++		const gchar *method;
++		
++		method = uri->method_string;
++		
++		if (name == NULL ||
++		    strcmp (name, GNOME_VFS_URI_PATH_STR) == 0) 
++		{
++			g_free (name);
++			name = g_strdup (method);
++		} 
++		else 
++		{
++			gchar *tmp;
++			
++			tmp = name;
++			name = g_strdup_printf ("%s: %s", method, name);
++			g_free (tmp);
++		}
++	}
++
++	if (!validated && !g_utf8_validate (name, -1, NULL)) 
++	{
++		gchar *utf8_name;
++		
++		utf8_name = make_valid_utf8 (name);
++		g_free (name);
++		name = utf8_name;
++	}
++
++	return name;
++}
++
+ /**
+  * egg_recent_item_get_short_name:
+  * @item: an #EggRecentItem
+@@ -303,8 +289,7 @@
+ egg_recent_item_get_short_name (const EggRecentItem *item)
+ {
+ 	GnomeVFSURI *uri;
+-	char *short_name;
+-	gboolean valid;
++	gchar *short_name;
+ 
+ 	g_return_val_if_fail (item != NULL, NULL);
+ 
+@@ -315,28 +300,7 @@
+ 	if (uri == NULL)
+ 		return NULL;
+ 
+-	short_name = gnome_vfs_uri_extract_short_name (uri);
+-	valid = FALSE;
+-
+-	if (strcmp (gnome_vfs_uri_get_scheme (uri), "file") == 0) {
+-		char *tmp;
+-
+-		tmp = g_filename_to_utf8 (short_name, -1, NULL, NULL, NULL);
+-		if (tmp) {
+-			g_free (short_name);
+-			short_name = tmp;
+-			valid = TRUE;
+-		}
+-	}
+-
+-	if (!valid) {
+-		char *tmp;
+-
+-		tmp = make_valid_utf8 (short_name);
+-		g_assert (tmp != NULL);
+-		g_free (short_name);
+-		short_name = tmp;
+-	}
++	short_name = get_uri_shortname_for_display (uri);
+ 
+ 	gnome_vfs_uri_unref (uri);
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c
+--- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c	2008-03-10 15:21:04.000000000 -0500
++++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c	2008-06-03 00:49:11.484375000 -0500
+@@ -29,6 +29,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/time.h>
++#include <sys/stat.h>
+ #include <time.h>
+ #include <gtk/gtk.h>
+ #include <libgnomevfs/gnome-vfs.h>
+@@ -43,6 +44,12 @@
+ #define EGG_RECENT_MODEL_MAX_ITEMS 500
+ #define EGG_RECENT_MODEL_DEFAULT_LIMIT 10
+ #define EGG_RECENT_MODEL_TIMEOUT_LENGTH 200
++#define EGG_RECENT_MODEL_POLL_TIME 3
++
++/* needed for Darwin */
++#if !HAVE_DECL_LOCKF
++int lockf (int filedes, int function, off_t size);
++#endif
+ 
+ #define EGG_RECENT_MODEL_KEY_DIR "/desktop/gnome/recent_files"
+ #define EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY EGG_RECENT_MODEL_KEY_DIR "/default_limit"
+@@ -71,6 +78,8 @@
+ 	guint expiration_change_notify_id;
+ 
+ 	guint changed_timeout;
++	guint poll_timeout;
++	time_t last_mtime;
+ };
+ 
+ /* signals */
+@@ -95,7 +104,7 @@
+ 	GSList *states;
+ 	GList *items;
+ 	EggRecentItem *current_item;
+-}ParseInfo;
++} ParseInfo;
+ 
+ typedef enum {
+ 	STATE_START,
+@@ -109,10 +118,10 @@
+ 	STATE_GROUP
+ } ParseState;
+ 
+-typedef struct _ChangedData {
++typedef struct {
+ 	EggRecentModel *model;
+ 	GList *list;
+-}ChangedData;
++} ChangedData;
+ 
+ #define TAG_RECENT_FILES "RecentFiles"
+ #define TAG_RECENT_ITEM "RecentItem"
+@@ -150,6 +159,14 @@
+ 			NULL,
+ 			error_handler};
+ 
++static GObjectClass *parent_class;
++
++static void egg_recent_model_clear_mime_filter (EggRecentModel *model);
++static void egg_recent_model_clear_group_filter (EggRecentModel *model);
++static void egg_recent_model_clear_scheme_filter (EggRecentModel *model);
++
++static GObjectClass *parent_class;
++
+ static gboolean
+ egg_recent_model_string_match (const GSList *list, const gchar *str)
+ {
+@@ -193,7 +210,9 @@
+ 	if (fputs (content, file) == EOF)
+ 		return FALSE;
+ 
++#ifndef G_OS_WIN32
+ 	fsync (fd);
++#endif
+ 	rewind (file);
+ 
+ 	return TRUE;
+@@ -294,17 +313,23 @@
+ 
+ 
+ 
+-static void
+-parse_info_init (ParseInfo *info)
++static ParseInfo *
++parse_info_init (void)
+ {
+-	info->states = g_slist_prepend (NULL, STATE_START);
+-	info->items = NULL;
++	ParseInfo *retval;
++	
++	retval = g_new0 (ParseInfo, 1);
++	retval->states = g_slist_prepend (NULL, STATE_START);
++	retval->items = NULL;
++	
++	return retval;
+ }
+ 
+ static void
+ parse_info_free (ParseInfo *info)
+ {
+ 	g_slist_free (info->states);
++	g_free (info);
+ }
+ 
+ static void
+@@ -332,6 +357,25 @@
+ 
+ #define ELEMENT_IS(name) (strcmp (element_name, (name)) == 0)
+ 
++static gboolean
++valid_element (ParseInfo    *info,
++	       int           valid_parent_state,
++	       const gchar  *element_name,
++	       const gchar  *valid_element,
++	       GError      **error)
++{
++	if (peek_state (info) != valid_parent_state) {
++	      g_set_error (error,
++			   G_MARKUP_ERROR,
++			   G_MARKUP_ERROR_INVALID_CONTENT,
++			   "Unexpected tag '%s', tag '%s' expected",
++			   element_name, valid_element);
++	      return FALSE;
++	}
++
++	return TRUE;
++}
++
+ static void
+ start_element_handler (GMarkupParseContext *context,
+ 			      const gchar *element_name,
+@@ -345,21 +389,43 @@
+ 	if (ELEMENT_IS (TAG_RECENT_FILES))
+ 		push_state (info, STATE_RECENT_FILES);
+ 	else if (ELEMENT_IS (TAG_RECENT_ITEM)) {
+-		info->current_item = egg_recent_item_new ();
+-		push_state (info, STATE_RECENT_ITEM);
+-	} else if (ELEMENT_IS (TAG_URI))
+-		push_state (info, STATE_URI);
+-	else if (ELEMENT_IS (TAG_MIME_TYPE))
+-		push_state (info, STATE_MIME_TYPE);
+-	else if (ELEMENT_IS (TAG_TIMESTAMP))
+-		push_state (info, STATE_TIMESTAMP);
+-	else if (ELEMENT_IS (TAG_PRIVATE)) {
+-		push_state (info, STATE_PRIVATE);
+-		egg_recent_item_set_private (info->current_item, TRUE);
+-	} else if (ELEMENT_IS (TAG_GROUPS))
+-		push_state (info, STATE_GROUPS);
+-	else if (ELEMENT_IS (TAG_GROUP)) 
+-		push_state (info, STATE_GROUP);
++		if (valid_element (info, STATE_RECENT_FILES,
++				   TAG_RECENT_ITEM, TAG_RECENT_FILES, error)) {
++			info->current_item = egg_recent_item_new ();
++			push_state (info, STATE_RECENT_ITEM);
++		}
++	} else if (ELEMENT_IS (TAG_URI)) {
++		if (valid_element (info, STATE_RECENT_ITEM,
++				   TAG_URI, TAG_RECENT_ITEM, error)) {
++			push_state (info, STATE_URI);
++		}
++	} else if (ELEMENT_IS (TAG_MIME_TYPE)) {
++		if (valid_element (info, STATE_RECENT_ITEM,
++				   TAG_MIME_TYPE, TAG_RECENT_ITEM, error)) {
++			push_state (info, STATE_MIME_TYPE);
++		}
++	} else if (ELEMENT_IS (TAG_TIMESTAMP)) {
++		if (valid_element (info, STATE_RECENT_ITEM,
++				   TAG_TIMESTAMP, TAG_RECENT_ITEM, error)) {
++			push_state (info, STATE_TIMESTAMP);
++		}
++	} else if (ELEMENT_IS (TAG_PRIVATE)) {
++		if (valid_element (info, STATE_RECENT_ITEM,
++				   TAG_PRIVATE, TAG_RECENT_ITEM, error)) {
++			push_state (info, STATE_PRIVATE);
++			egg_recent_item_set_private (info->current_item, TRUE);
++		}
++	} else if (ELEMENT_IS (TAG_GROUPS)) {
++		if (valid_element (info, STATE_RECENT_ITEM,
++				   TAG_GROUPS, TAG_RECENT_ITEM, error)) {
++			push_state (info, STATE_GROUPS);
++		}
++	} else if (ELEMENT_IS (TAG_GROUP)) {
++		if (valid_element (info, STATE_GROUPS,
++				   TAG_GROUP, TAG_GROUPS, error)) {
++			push_state (info, STATE_GROUP);
++		}
++	}
+ }
+ 
+ static gint
+@@ -392,14 +458,22 @@
+ 
+ 	switch (peek_state (info)) {
+ 		case STATE_RECENT_ITEM:
+-			info->items = g_list_append (info->items,
+-						    info->current_item);
+-			if (info->current_item->uri == NULL ||
+-			    strlen (info->current_item->uri) == 0)
+-				g_warning ("URI NOT LOADED");
+-		break;
++			if (!info->current_item) {
++				g_warning ("No recent item found\n");
++				break;
++			}
++
++			if (!info->current_item->uri) {
++				g_warning ("Invalid item found\n");
++				break;
++			}
++				
++			info->items = g_list_prepend (info->items,
++			                              info->current_item);
++			info->current_item = NULL;
++			break;
+ 		default:
+-		break;
++			break;
+ 	}
+ 
+ 	pop_state (info);
+@@ -413,6 +487,9 @@
+ 		     GError **error)
+ {
+ 	ParseInfo *info = (ParseInfo *)user_data;
++	gchar *value;
++
++	value = g_strndup (text, text_len);
+ 
+ 	switch (peek_state (info)) {
+ 		case STATE_START:
+@@ -422,22 +499,22 @@
+ 		case STATE_GROUPS:
+ 		break;
+ 		case STATE_URI:
+-			egg_recent_item_set_uri (info->current_item, text);
++			egg_recent_item_set_uri (info->current_item, value);
+ 		break;
+ 		case STATE_MIME_TYPE:
+-			egg_recent_item_set_mime_type (info->current_item,
+-							 text);
++			egg_recent_item_set_mime_type (info->current_item, value);
+ 		break;
+ 		case STATE_TIMESTAMP:
+ 			egg_recent_item_set_timestamp (info->current_item,
+-							 (time_t)atoi (text));
++							 (time_t)atoi (value));
+ 		break;
+ 		case STATE_GROUP:
+ 			egg_recent_item_add_group (info->current_item,
+ 						     text);
+ 		break;
+ 	}
+-			
++
++	g_free (value);
+ }
+ 
+ static void
+@@ -511,23 +588,23 @@
+ }
+ 
+ static GList *
+-egg_recent_model_filter (EggRecentModel *model,
+-				GList *list)
++egg_recent_model_filter (EggRecentModel *model, GList *list)
+ {
+-	EggRecentItem *item;
+ 	GList *newlist = NULL;
++	GList *l;
+ 	gchar *mime_type;
+ 	gchar *uri;
+ 
+ 	g_return_val_if_fail (list != NULL, NULL);
+ 
+-	while (list) {
++	for (l = list; l != NULL ; l = l->next) {
++		EggRecentItem *item = (EggRecentItem *) l->data;
+ 		gboolean pass_mime_test = FALSE;
+ 		gboolean pass_group_test = FALSE;
+ 		gboolean pass_scheme_test = FALSE;
+-		item = (EggRecentItem *)list->data;
+-		list = list->next;
+ 
++		g_assert (item != NULL);
++		
+ 		uri = egg_recent_item_get_uri (item);
+ 
+ 		/* filter by mime type */
+@@ -570,17 +647,15 @@
+ 
+ 		if (pass_mime_test && pass_group_test && pass_scheme_test)
+ 			newlist = g_list_prepend (newlist, item);
++		else
++			egg_recent_item_unref (item);
+ 
+ 		g_free (uri);
+ 	}
+ 
+-	if (newlist) {
+-		newlist = g_list_reverse (newlist);
+-		g_list_free (list);
+-	}
++	g_list_free (list);
+ 
+-	
+-	return newlist;
++	return g_list_reverse (newlist);
+ }
+ 
+ 
+@@ -643,6 +718,8 @@
+ static gboolean
+ egg_recent_model_changed_timeout (EggRecentModel *model)
+ {
++	model->priv->changed_timeout = 0;
++
+ 	egg_recent_model_changed (model);
+ 
+ 	return FALSE;
+@@ -661,7 +738,9 @@
+ 	g_return_if_fail (EGG_IS_RECENT_MODEL (user_data));
+ 	model = EGG_RECENT_MODEL (user_data);
+ 
+-	if (event_type == GNOME_VFS_MONITOR_EVENT_CHANGED) {
++	if (event_type == GNOME_VFS_MONITOR_EVENT_CHANGED ||
++	    event_type == GNOME_VFS_MONITOR_EVENT_CREATED ||
++	    event_type == GNOME_VFS_MONITOR_EVENT_DELETED) {
+ 		if (model->priv->changed_timeout > 0) {
+ 			g_source_remove (model->priv->changed_timeout);
+ 		}
+@@ -673,25 +752,60 @@
+ 	}
+ }
+ 
++static gboolean
++egg_recent_model_poll_timeout (gpointer user_data)
++{
++	EggRecentModel *model;
++	struct stat stat_buf;
++	int stat_res;
++
++	model = EGG_RECENT_MODEL (user_data);
++	stat_res = stat (model->priv->path, &stat_buf);
++
++	if (!stat_res && stat_buf.st_mtime &&  
++	    stat_buf.st_mtime != model->priv->last_mtime) {
++		model->priv->last_mtime = stat_buf.st_mtime;
++		
++		if (model->priv->changed_timeout > 0)
++			g_source_remove (model->priv->changed_timeout);
++		
++		model->priv->changed_timeout = g_timeout_add (
++			EGG_RECENT_MODEL_TIMEOUT_LENGTH,
++			(GSourceFunc)egg_recent_model_changed_timeout,
++			model);
++	}
++	return TRUE;
++}
++
+ static void
+ egg_recent_model_monitor (EggRecentModel *model, gboolean should_monitor)
+ {
+ 	if (should_monitor && model->priv->monitor == NULL) {
+ 		char *uri;
++		GnomeVFSResult result;
+ 
+ 		uri = gnome_vfs_get_uri_from_local_path (model->priv->path);
+ 
+-		gnome_vfs_monitor_add (&model->priv->monitor,
+-				       uri,
+-				       GNOME_VFS_MONITOR_FILE,
+-				       egg_recent_model_monitor_cb,
+-				       model);
++		result = gnome_vfs_monitor_add (&model->priv->monitor,
++				       		uri,
++				       		GNOME_VFS_MONITOR_FILE,
++				       		egg_recent_model_monitor_cb,
++				       		model);
+ 
+ 		g_free (uri);
+ 
+ 		/* if the above fails, don't worry about it.
+ 		 * local notifications will still happen
+ 		 */
++		if (result == GNOME_VFS_ERROR_NOT_SUPPORTED) {
++			if (model->priv->poll_timeout > 0)
++				g_source_remove (model->priv->poll_timeout);
++			
++			model->priv->poll_timeout = g_timeout_add (
++				EGG_RECENT_MODEL_POLL_TIME * 1000,
++				egg_recent_model_poll_timeout,
++				model);
++		}
+ 
+ 	} else if (!should_monitor && model->priv->monitor != NULL) {
+ 		gnome_vfs_monitor_cancel (model->priv->monitor);
+@@ -718,7 +832,7 @@
+ 	GList *list=NULL;
+ 	gchar *content;
+ 	GMarkupParseContext *ctx;
+-	ParseInfo info;
++	ParseInfo *info;
+ 	GError *error;
+ 
+ 	content = egg_recent_model_read_raw (model, file);
+@@ -728,35 +842,39 @@
+ 		return NULL;
+ 	}
+ 
+-	parse_info_init (&info);
++	info = parse_info_init ();
+ 	
+-	ctx = g_markup_parse_context_new (&parser, 0, &info, NULL);
++	ctx = g_markup_parse_context_new (&parser, 0, info, NULL);
+ 	
+ 	error = NULL;
+-	if (!g_markup_parse_context_parse (ctx, content, strlen (content),
+-					   &error)) {
+-		g_warning (error->message);
++	if (!g_markup_parse_context_parse (ctx, content, strlen (content), &error)) {
++		g_warning ("Error while parsing the .recently-used file: %s\n",
++			   error->message);
++		
+ 		g_error_free (error);
+-		error = NULL;
+-		goto out;
++		parse_info_free (info);
++
++		return NULL;
+ 	}
+ 
+ 	error = NULL;
+-	if (!g_markup_parse_context_end_parse (ctx, &error))
+-		goto out;
+-	
+-	g_markup_parse_context_free (ctx);
+-out:
+-	list = info.items;
++	if (!g_markup_parse_context_end_parse (ctx, &error)) {
++		g_warning ("Unable to complete parsing of the .recently-used file: %s\n",
++			   error->message);
++		
++		g_error_free (error);
++		g_markup_parse_context_free (ctx);
++		parse_info_free (info);
+ 
+-	parse_info_free (&info);
++		return NULL;
++	}
++	
++	list = g_list_reverse (info->items);
+ 
++	g_markup_parse_context_free (ctx);
++	parse_info_free (info);
+ 	g_free (content);
+ 
+-	/*
+-	g_print ("Total items: %d\n", g_list_length (list));
+-	*/
+-
+ 	return list;
+ }
+ 
+@@ -859,13 +977,14 @@
+ }
+ 
+ static FILE *
+-egg_recent_model_open_file (EggRecentModel *model)
++egg_recent_model_open_file (EggRecentModel *model,
++			    gboolean        for_writing)
+ {
+ 	FILE *file;
+ 	mode_t prev_umask;
+ 	
+ 	file = fopen (model->priv->path, "r+");
+-	if (file == NULL) {
++	if (file == NULL && for_writing) {
+ 		/* be paranoid */
+ 		prev_umask = umask (077);
+ 
+@@ -882,6 +1001,7 @@
+ static gboolean
+ egg_recent_model_lock_file (FILE *file)
+ {
++#ifdef HAVE_LOCKF
+ 	int fd;
+ 	gint	try = 5;
+ 
+@@ -911,17 +1031,24 @@
+ 	}
+ 
+ 	return FALSE;
++#else
++	return TRUE;
++#endif /* HAVE_LOCKF */
+ }
+ 
+ static gboolean
+ egg_recent_model_unlock_file (FILE *file)
+ {
++#ifdef HAVE_LOCKF
+ 	int fd;
+ 
+ 	rewind (file);
+ 	fd = fileno (file);
+ 
+ 	return (lockf (fd, F_ULOCK, 0) == 0) ? TRUE : FALSE;
++#else
++	return TRUE;
++#endif /* HAVE_LOCKF */
+ }
+ 
+ static void
+@@ -929,6 +1056,10 @@
+ {
+ 	EggRecentModel *model = EGG_RECENT_MODEL (object);
+ 
++	if (model->priv->changed_timeout > 0) {
++		g_source_remove (model->priv->changed_timeout);
++	}
++
+ 	egg_recent_model_monitor (model, FALSE);
+ 
+ 
+@@ -968,8 +1099,13 @@
+ 	g_hash_table_destroy (model->priv->monitors);
+ 	model->priv->monitors = NULL;
+ 
++	if (model->priv->poll_timeout > 0)
++		g_source_remove (model->priv->poll_timeout);
++	model->priv->poll_timeout =0;
+ 
+ 	g_free (model->priv);
++
++	parent_class->finalize (object);
+ }
+ 
+ static void
+@@ -983,16 +1119,25 @@
+ 	switch (prop_id)
+ 	{
+ 		case PROP_MIME_FILTERS:
++			if (model->priv->mime_filter_values != NULL)
++				egg_recent_model_clear_mime_filter (model);
++			
+ 			model->priv->mime_filter_values =
+ 				(GSList *)g_value_get_pointer (value);
+ 		break;
+ 
+ 		case PROP_GROUP_FILTERS:
++			if (model->priv->group_filter_values != NULL)
++				egg_recent_model_clear_group_filter (model);
++			
+ 			model->priv->group_filter_values =
+ 				(GSList *)g_value_get_pointer (value);
+ 		break;
+ 
+ 		case PROP_SCHEME_FILTERS:
++			if (model->priv->scheme_filter_values != NULL)
++				egg_recent_model_clear_scheme_filter (model);
++			
+ 			model->priv->scheme_filter_values =
+ 				(GSList *)g_value_get_pointer (value);
+ 		break;
+@@ -1053,6 +1198,10 @@
+ {
+ 	GObjectClass *object_class;
+ 
++	parent_class = g_type_class_peek_parent (klass);
++
++	parent_class = g_type_class_peek_parent (klass);
++
+ 	object_class = G_OBJECT_CLASS (klass);
+ 	object_class->set_property = egg_recent_model_set_property;
+ 	object_class->get_property = egg_recent_model_get_property;
+@@ -1203,6 +1352,8 @@
+ 					(GDestroyNotify) gnome_vfs_monitor_cancel);
+ 
+ 	model->priv->monitor = NULL;
++	model->priv->poll_timeout = 0;
++	model->priv->last_mtime = 0;
+ 	egg_recent_model_monitor (model, TRUE);
+ }
+ 
+@@ -1259,7 +1410,7 @@
+ 		g_free (uri);
+ 	}
+ 
+-	file = egg_recent_model_open_file (model);
++	file = egg_recent_model_open_file (model, TRUE);
+ 	g_return_val_if_fail (file != NULL, FALSE);
+ 
+ 	time (&t);
+@@ -1362,7 +1513,7 @@
+ 	g_return_val_if_fail (EGG_IS_RECENT_MODEL (model), FALSE);
+ 	g_return_val_if_fail (uri != NULL, FALSE);
+ 
+-	file = egg_recent_model_open_file (model);
++	file = egg_recent_model_open_file (model, TRUE);
+ 	g_return_val_if_fail (file != NULL, FALSE);
+ 
+ 	if (egg_recent_model_lock_file (file)) {
+@@ -1421,15 +1572,15 @@
+ egg_recent_model_get_list (EggRecentModel *model)
+ {
+ 	FILE *file;
+-	GList *list=NULL;
++	GList *list = NULL;
+ 
+-	file = egg_recent_model_open_file (model);
+-	g_return_val_if_fail (file != NULL, NULL);
++	file = egg_recent_model_open_file (model, FALSE);
++	if (file == NULL)
++		return NULL;
+ 	
+-	if (egg_recent_model_lock_file (file)) {
++	if (egg_recent_model_lock_file (file))
+ 		list = egg_recent_model_read (model, file);
+-		
+-	} else {
++	else {
+ 		g_warning ("Failed to lock:  %s", strerror (errno));
+ 		fclose (file);
+ 		return NULL;
+@@ -1500,7 +1651,7 @@
+ 	FILE *file;
+ 	int fd;
+ 
+-	file = egg_recent_model_open_file (model);
++	file = egg_recent_model_open_file (model, TRUE);
+ 	g_return_if_fail (file != NULL);
+ 
+ 	fd = fileno (file);
+@@ -1516,8 +1667,27 @@
+ 		g_warning ("Failed to unlock: %s", strerror (errno));
+ 
+ 	fclose (file);
++	
++	if (model->priv->monitor == NULL) {
++		/* since monitoring isn't working, at least give a
++		 * local notification
++		 */
++		egg_recent_model_changed (model);
++	}
+ }
+ 
++static void
++egg_recent_model_clear_mime_filter (EggRecentModel *model)
++{
++	g_return_if_fail (model != NULL);
++
++	if (model->priv->mime_filter_values != NULL) {
++		g_slist_foreach (model->priv->mime_filter_values,
++				 (GFunc) g_pattern_spec_free, NULL);
++		g_slist_free (model->priv->mime_filter_values);
++		model->priv->mime_filter_values = NULL;
++	}
++}	
+ 
+ /**
+  * egg_recent_model_set_filter_mime_types:
+@@ -1537,12 +1707,7 @@
+ 
+ 	g_return_if_fail (model != NULL);
+ 
+-	if (model->priv->mime_filter_values != NULL) {
+-		g_slist_foreach (model->priv->mime_filter_values,
+-				 (GFunc) g_pattern_spec_free, NULL);
+-		g_slist_free (model->priv->mime_filter_values);
+-		model->priv->mime_filter_values = NULL;
+-	}
++	egg_recent_model_clear_mime_filter (model);
+ 
+ 	va_start (valist, model);
+ 
+@@ -1559,6 +1724,18 @@
+ 	model->priv->mime_filter_values = list;
+ }
+ 
++static void
++egg_recent_model_clear_group_filter (EggRecentModel *model)
++{
++	g_return_if_fail (model != NULL);
++
++	if (model->priv->group_filter_values != NULL) {
++		g_slist_foreach (model->priv->group_filter_values, (GFunc)g_free, NULL);
++		g_slist_free (model->priv->group_filter_values);
++		model->priv->group_filter_values = NULL;
++	}
++}
++
+ /**
+  * egg_recent_model_set_filter_groups:
+  * @model:  A EggRecentModel object.
+@@ -1577,12 +1754,8 @@
+ 
+ 	g_return_if_fail (model != NULL);
+ 
+-	if (model->priv->group_filter_values != NULL) {
+-		g_slist_foreach (model->priv->group_filter_values, (GFunc)g_free, NULL);
+-		g_slist_free (model->priv->group_filter_values);
+-		model->priv->group_filter_values = NULL;
+-	}
+-
++	egg_recent_model_clear_group_filter (model);
++	
+ 	va_start (valist, model);
+ 
+ 	str = va_arg (valist, gchar*);
+@@ -1598,6 +1771,19 @@
+ 	model->priv->group_filter_values = list;
+ }
+ 
++static void
++egg_recent_model_clear_scheme_filter (EggRecentModel *model)
++{
++	g_return_if_fail (model != NULL);
++
++	if (model->priv->scheme_filter_values != NULL) {
++		g_slist_foreach (model->priv->scheme_filter_values,
++				(GFunc) g_pattern_spec_free, NULL);
++		g_slist_free (model->priv->scheme_filter_values);
++		model->priv->scheme_filter_values = NULL;
++	}
++}
++
+ /**
+  * egg_recent_model_set_filter_uri_schemes:
+  * @model:  A EggRecentModel object.
+@@ -1615,13 +1801,8 @@
+ 
+ 	g_return_if_fail (model != NULL);
+ 
+-	if (model->priv->scheme_filter_values != NULL) {
+-		g_slist_foreach (model->priv->scheme_filter_values,
+-				(GFunc) g_pattern_spec_free, NULL);
+-		g_slist_free (model->priv->scheme_filter_values);
+-		model->priv->scheme_filter_values = NULL;
+-	}
+-
++	egg_recent_model_clear_scheme_filter (model);
++	
+ 	va_start (valist, model);
+ 
+ 	str = va_arg (valist, gchar*);
+@@ -1724,8 +1905,9 @@
+ 
+ 	g_return_if_fail (model != NULL);
+ 
+-	file = egg_recent_model_open_file (model);
+-	g_return_if_fail (file != NULL);
++	file = egg_recent_model_open_file (model, FALSE);
++	if (file == NULL)
++		return;
+ 	
+ 	if (egg_recent_model_lock_file (file)) {
+ 		list = egg_recent_model_read (model, file);
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c
+--- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c	2008-03-10 15:21:04.000000000 -0500
++++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c	2008-06-03 00:49:11.562500000 -0500
+@@ -2,16 +2,19 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <gtk/gtk.h>
+-#include <time.h>
+-#include <unistd.h>
+-#include <sys/types.h>
+ #ifndef USE_STABLE_LIBGNOMEUI
+-#include <libgnomeui/gnome-icon-theme.h>
+ #include <libgnomeui/gnome-icon-lookup.h>
+ #endif
++#include <time.h>
++#include <unistd.h>
++#include <sys/types.h>
+ #include <math.h>
+ #include "egg-recent-util.h"
+ 
++#ifdef G_OS_WIN32
++#include <windows.h>
++#endif
++
+ #define EGG_RECENT_UTIL_HOSTNAME_SIZE 512
+ 
+ /* ripped out of gedit2 */
+@@ -53,72 +56,26 @@
+ 	return g_string_free (str, FALSE);
+ }
+ 
+-#ifndef USE_STABLE_LIBGNOMEUI
+-static GdkPixbuf *
+-load_icon_file (char          *filename,
+-		guint          nominal_size)
+-{
+-	GdkPixbuf *pixbuf, *scaled_pixbuf;
+-	guint width, height;
+-
+-	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, nominal_size, nominal_size, NULL);
+-
+-	if (pixbuf == NULL) {
+-		return NULL;
+-	}
+-	
+-	width = gdk_pixbuf_get_width (pixbuf); 
+-	height = gdk_pixbuf_get_height (pixbuf);
+-	/* if the icon is larger than the nominal size, scale down */
+-	if (MAX (width, height) > nominal_size) {
+-		if (width > height) {
+-			height = height * nominal_size / width;
+-			width = nominal_size;
+-		} else {
+-			width = width * nominal_size / height;
+-			height = nominal_size;
+-		}
+-		scaled_pixbuf = gdk_pixbuf_scale_simple
+-			(pixbuf, width, height, GDK_INTERP_BILINEAR);
+-		g_object_unref (pixbuf);
+-		pixbuf = scaled_pixbuf;
+-	}
+-
+-	return pixbuf;
+-}
+-
+ GdkPixbuf *
+-egg_recent_util_get_icon (GnomeIconTheme *theme, const gchar *uri,
++egg_recent_util_get_icon (GtkIconTheme *theme, const gchar *uri,
+ 			  const gchar *mime_type, int size)
+ {
++#ifndef USE_STABLE_LIBGNOMEUI
+ 	gchar *icon;
+-	gchar *filename;
+-	const GnomeIconData *icon_data;
+ 	GdkPixbuf *pixbuf;
+ 	
+ 	icon = gnome_icon_lookup (theme, NULL, uri, NULL, NULL,
+ 				  mime_type, 0, NULL);
+-	
+ 
+ 	g_return_val_if_fail (icon != NULL, NULL);
+ 
+-	filename = gnome_icon_theme_lookup_icon (theme, icon,
+-						 size,
+-						 &icon_data,
+-						 NULL);
++	pixbuf = gtk_icon_theme_load_icon (theme, icon, size, 0, NULL);
+ 	g_free (icon);
+ 
+-	if (filename == NULL) {
+-		return NULL;
+-	}
+-
+-	pixbuf = load_icon_file (filename, size);
+-	g_free (filename);
+-	
+-	
+ 	return pixbuf;
++#endif
++	return NULL;
+ }
+-#endif /* !USE_STABLE_LIBGNOMEUI */
+ 
+ gchar *
+ egg_recent_util_get_unique_id (void)
+@@ -128,7 +85,14 @@
+ 	guint32 rand;
+ 	int pid;
+ 	
++#ifndef G_OS_WIN32
+ 	gethostname (hostname, EGG_RECENT_UTIL_HOSTNAME_SIZE);
++#else
++	{
++		DWORD size = EGG_RECENT_UTIL_HOSTNAME_SIZE;
++		GetComputerName (hostname, &size);
++	}
++#endif
+ 	
+ 	time (&the_time);
+ 	rand = g_random_int ();
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h
+--- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h	2008-03-10 15:21:04.000000000 -0500
++++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h	2008-06-03 00:49:11.578125000 -0500
+@@ -3,20 +3,15 @@
+ #define __EGG_RECENT_UTIL__
+ 
+ #include <gtk/gtk.h>
+-#ifndef USE_STABLE_LIBGNOMEUI
+-#include <libgnomeui/gnome-icon-theme.h>
+-#endif
+ 
+ G_BEGIN_DECLS
+ 
+ gchar * egg_recent_util_escape_underlines (const gchar *uri);
+ gchar * egg_recent_util_get_unique_id (void);
+-#ifndef USE_STABLE_LIBGNOMEUI
+-GdkPixbuf * egg_recent_util_get_icon (GnomeIconTheme *theme,
++GdkPixbuf * egg_recent_util_get_icon (GtkIconTheme *theme,
+ 				      const gchar *uri,
+ 				      const gchar *mime_type,
+ 				      int size);
+-#endif
+ 
+ G_END_DECLS
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c
+--- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c	2008-03-10 15:21:04.000000000 -0500
++++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c	2008-06-03 00:49:11.593750000 -0500
+@@ -37,6 +37,15 @@
+ #include "egg-recent-util.h"
+ #include "egg-recent-item.h"
+ 
++#ifndef EGG_COMPILATION
++#include <glib/gi18n.h>
++#else
++#define _(x) (x)
++#define N_(x) (x)
++#endif
++
++#define DEFAULT_LABEL_WIDTH 30
++
+ struct _EggRecentViewGtk {
+ 	GObject parent_instance;	/* We emit signals */
+ 
+@@ -52,9 +61,7 @@
+ 
+ 	gboolean show_icons;
+ 	gboolean show_numbers;
+-#ifndef USE_STABLE_LIBGNOMEUI
+-	GnomeIconTheme *theme;
+-#endif
++	GtkIconTheme *theme;
+ 
+ 	GtkTooltips *tooltips;
+ 	EggRecentViewGtkTooltipFunc tooltip_func;
+@@ -63,6 +70,8 @@
+ 	EggRecentModel *model;
+ 	GConfClient *client;
+ 	GtkIconSize icon_size;
++
++	gint label_width;
+ };
+ 
+ 
+@@ -85,11 +94,26 @@
+ 	PROP_MENU,
+ 	PROP_START_MENU_ITEM,
+ 	PROP_SHOW_ICONS,
+-	PROP_SHOW_NUMBERS
++	PROP_SHOW_NUMBERS,
++	PROP_LABEL_WIDTH
+ };
+ 
+ static guint view_signals[LAST_SIGNAL] = { 0 };
+ 
++static GObjectClass *parent_class;
++
++/* mark a menu item, so that we know which ones we own */
++static void
++egg_recent_view_gtk_set_item_tag (EggRecentViewGtk *view,
++				  GtkMenuItem      *menu_item)
++{
++	g_return_if_fail (EGG_IS_RECENT_VIEW_GTK (view));
++	g_return_if_fail (GTK_IS_MENU_ITEM (menu_item));
++
++	g_object_set_data (G_OBJECT (menu_item),
++			   view->uid,
++			   GINT_TO_POINTER (1));
++}
+ 
+ static void
+ egg_recent_view_gtk_clear (EggRecentViewGtk *view)
+@@ -106,10 +130,10 @@
+ 
+ 	p = menu_children;
+ 	while (p != NULL) {
+-		menu_item = (GObject *)p->data;
++		menu_item = G_OBJECT (p->data);
+ 
+-		menu_data = (gint *)g_object_get_data (menu_item,
+-						       view->uid);
++		menu_data = (gint *) g_object_get_data (menu_item,
++						        view->uid);
+ 	
+ 		if (menu_data) {
+ 			gtk_container_remove (GTK_CONTAINER (view->menu),
+@@ -119,6 +143,8 @@
+ 		
+ 		p = p->next;
+ 	}
++
++	g_list_free (menu_children);
+ }
+ 
+ 
+@@ -195,10 +221,7 @@
+ 	 * this is a tag so we can distinguish our menu items
+ 	 * from others that may be in the menu.
+ 	 */
+-	g_object_set_data (G_OBJECT (retval),
+-			   view->uid,
+-			   GINT_TO_POINTER (1));
+-
++	egg_recent_view_gtk_set_item_tag (view, GTK_MENU_ITEM (retval));
+ 
+ 	gtk_widget_show (retval);
+ 
+@@ -214,6 +237,7 @@
+ 	EggRecentViewGtkMenuData *md;
+ 	gchar *mime_type;
+ 	GtkWidget *image;
++	GtkWidget *label;
+ 	GdkPixbuf *pixbuf;
+ 	gchar *text;
+ 	gchar *short_name;
+@@ -273,6 +297,10 @@
+ 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item),
+ 				       image);
+ 
++	label = GTK_BIN (menu_item)->child;
++	gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
++	gtk_label_set_max_width_chars (GTK_LABEL (label), view->label_width);
++
+ 	md = g_new0 (EggRecentViewGtkMenuData, 1);
+ 	md->view = view;
+ 	md->item = egg_recent_item_ref (item);
+@@ -290,10 +318,7 @@
+ 	 * this is a tag so we can distinguish our menu items
+ 	 * from others that may be in the menu.
+ 	 */
+-	g_object_set_data (G_OBJECT (menu_item),
+-			   view->uid,
+-			   GINT_TO_POINTER (1));
+-
++	egg_recent_view_gtk_set_item_tag (view, GTK_MENU_ITEM (menu_item));
+ 
+ 	gtk_widget_show (menu_item);
+ 
+@@ -301,6 +326,38 @@
+ }
+ 
+ static void
++egg_recent_view_gtk_create_tooltip (EggRecentViewGtk *view,
++				    GtkWidget        *menu_item,
++				    EggRecentItem    *recent_item)
++{
++	gchar *name, *tip_text;
++	
++	g_return_if_fail (EGG_IS_RECENT_VIEW_GTK (view));
++	g_return_if_fail (GTK_IS_WIDGET (menu_item));
++	g_return_if_fail (recent_item != NULL);
++
++	if (!view->tooltips)
++		return;
++
++	name = egg_recent_item_get_uri_for_display (recent_item);
++	if (!name)
++		return;
++
++	tip_text = g_strdup_printf (_("Open '%s'"), name);
++	if (!tip_text) {
++		g_free (name);
++		return;
++	}
++
++	gtk_tooltips_set_tip (view->tooltips, menu_item,
++			      tip_text,
++			      NULL);
++	
++	g_free (tip_text);
++	g_free (name);
++}
++
++static void
+ egg_recent_view_gtk_add_to_menu (EggRecentViewGtk *view,
+ 				 EggRecentItem *item,
+ 				 gint display,
+@@ -314,19 +371,32 @@
+ 
+ 	menu_offset = egg_recent_view_gtk_find_menu_offset (view);
+ 
+-	if (item != NULL)
++	if (item) {
+ 		menu_item = egg_recent_view_gtk_new_menu_item (view, item, display);
++		if (!menu_item)
++			return;
++		
++		/* if present, use the custom tooltip function;
++		 * otherwise, use ours (which has been "borrowed"
++		 * from GEdit)
++		 */
++		if (view->tooltip_func) {
++			view->tooltip_func (view->tooltips,
++					    menu_item,
++					    item,
++					    view->tooltip_func_data);
++		}
++		else {
++			egg_recent_view_gtk_create_tooltip (view, menu_item, item);
++		}
++	}
+ 	else
+ 		menu_item = egg_recent_view_gtk_new_separator (view);
+ 
+-	if (view->tooltip_func != NULL && menu_item != NULL) {
+-		view->tooltip_func (view->tooltips, menu_item,
+-				    item, view->tooltip_func_data);
+-	}
+-	
+ 	if (menu_item)
+-		gtk_menu_shell_insert (GTK_MENU_SHELL (view->menu), menu_item,
+-			       menu_offset+index);
++		gtk_menu_shell_insert (GTK_MENU_SHELL (view->menu),
++				       menu_item,
++				       menu_offset + index);
+ }
+ 
+ static void
+@@ -363,12 +433,33 @@
+ }
+ 
+ static void
++egg_recent_view_gtk_set_empty_list (EggRecentViewGtk *view)
++{
++	gboolean is_menu_embedded = FALSE;
++
++	egg_recent_view_gtk_clear (view);
++	
++	is_menu_embedded = view->trailing_sep || (egg_recent_view_gtk_find_menu_offset (view) > 0);
++	if (!is_menu_embedded) {
++		GtkWidget *dummy_item;
++
++		dummy_item = gtk_menu_item_new_with_label (_("Empty"));
++		gtk_widget_set_sensitive (dummy_item, FALSE);
++		gtk_menu_shell_insert (GTK_MENU_SHELL (view->menu), dummy_item, 0);
++		gtk_widget_show (dummy_item);
++
++		/* we own this item */
++		egg_recent_view_gtk_set_item_tag (view, GTK_MENU_ITEM (dummy_item));
++	}
++}
++
++static void
+ model_changed_cb (EggRecentModel *model, GList *list, EggRecentViewGtk *view)
+ {
+ 	if (list != NULL)
+ 		egg_recent_view_gtk_set_list (view, list);
+ 	else
+-		egg_recent_view_gtk_clear (view);
++		egg_recent_view_gtk_set_empty_list (view);
+ }
+ 
+ static EggRecentModel *
+@@ -455,6 +546,10 @@
+ 			egg_recent_view_gtk_show_numbers (view,
+ 					g_value_get_boolean (value));
+ 		break;
++		case PROP_LABEL_WIDTH:
++		        egg_recent_view_gtk_set_label_width (view,
++					g_value_get_int (value));
++		break;
+ 		default:
+ 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+ 		break;
+@@ -483,6 +578,9 @@
+ 		case PROP_SHOW_NUMBERS:
+ 			g_value_set_boolean (value, view->show_numbers);
+ 		break;
++		case PROP_LABEL_WIDTH:
++			g_value_set_int (value, view->label_width);
++		break;
+ 		default:
+ 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+ 		break;
+@@ -497,15 +595,16 @@
+ 	g_signal_handler_disconnect (G_OBJECT (view->model),
+ 				     view->changed_cb_id);
+ 
++	egg_recent_view_gtk_clear (view);
++
+ 	g_free (view->uid);
+ 
+ 	g_object_unref (view->model);
+-#ifndef USE_STABLE_LIBGNOMEUI
+-	g_object_unref (view->theme);
+-#endif
+ 	g_object_unref (view->client);
+ 
+ 	g_object_unref (view->tooltips);
++
++	parent_class->finalize (object);
+ }
+ 
+ static void
+@@ -515,6 +614,8 @@
+ 
+ 	object_class = G_OBJECT_CLASS (klass);
+ 
++	parent_class = g_type_class_peek_parent (klass);
++
+ 	object_class->set_property = egg_recent_view_gtk_set_property;
+ 	object_class->get_property = egg_recent_view_gtk_get_property;
+ 	object_class->finalize     = egg_recent_view_gtk_finalize;
+@@ -559,6 +660,16 @@
+ 					   TRUE,
+ 					   G_PARAM_READWRITE));
+ 
++	g_object_class_install_property (object_class,
++					 PROP_LABEL_WIDTH,
++					 g_param_spec_int ("label-width",
++					   "Label Width",
++					   "The desired width of the menu label, in characters",
++					   -1,
++					   G_MAXINT,
++					   DEFAULT_LABEL_WIDTH,
++					   G_PARAM_READWRITE));
++
+ 	klass->activate = NULL;
+ }
+ 
+@@ -586,14 +697,12 @@
+ 
+ }
+ 
+-#ifndef USE_STABLE_LIBGNOMEUI
+ static void
+-theme_changed_cb (GnomeIconTheme *theme, EggRecentViewGtk *view)
++theme_changed_cb (GtkIconTheme *theme, EggRecentViewGtk *view)
+ {
+ 	if (view->model != NULL)
+ 		egg_recent_model_changed (view->model);
+ }
+-#endif
+ 
+ static void
+ egg_recent_view_gtk_init (EggRecentViewGtk * view)
+@@ -618,12 +727,9 @@
+ 	view->trailing_sep = FALSE;
+ 
+ 	view->uid = egg_recent_util_get_unique_id ();
+-#ifndef USE_STABLE_LIBGNOMEUI
+-	view->theme = gnome_icon_theme_new ();
+-	gnome_icon_theme_set_allow_svg (view->theme, TRUE);
++	view->theme = gtk_icon_theme_get_default ();
+ 	g_signal_connect_object (view->theme, "changed",
+ 				 G_CALLBACK (theme_changed_cb), view, 0);
+-#endif
+ 	view->tooltips = gtk_tooltips_new ();
+ 	g_object_ref (view->tooltips);
+ 	gtk_object_sink (GTK_OBJECT (view->tooltips));
+@@ -631,6 +737,8 @@
+ 	view->tooltip_func_data = NULL;
+ 
+ 	view->icon_size = GTK_ICON_SIZE_MENU;
++
++	view->label_width = DEFAULT_LABEL_WIDTH;
+ }
+ 
+ void
+@@ -681,6 +789,23 @@
+ 		egg_recent_model_changed (view->model);
+ }
+ 
++void
++egg_recent_view_gtk_set_label_width (EggRecentViewGtk *view,
++				     gint              chars)
++{
++	g_return_if_fail (EGG_IS_RECENT_VIEW_GTK (view));
++
++	view->label_width = chars;
++}
++
++gint
++egg_recent_view_gtk_get_label_width (EggRecentViewGtk *view)
++{
++	g_return_val_if_fail (EGG_IS_RECENT_VIEW_GTK (view), -1);
++
++	return view->label_width;
++}
++
+ /**
+  * egg_recent_view_gtk_set_menu:
+  * @view: A EggRecentViewGtk object.
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h
+--- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h	2008-03-10 15:21:04.000000000 -0500
++++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h	2008-06-03 00:49:11.609375000 -0500
+@@ -59,6 +59,10 @@
+ 					      GtkIconSize icon_size);
+ GtkIconSize egg_recent_view_gtk_get_icon_size (EggRecentViewGtk *view);
+ 
++void egg_recent_view_gtk_set_label_width    (EggRecentViewGtk *view,
++					     gint              chars);
++gint egg_recent_view_gtk_get_label_width    (EggRecentViewGtk *view);
++
+ G_END_DECLS
+ 
+ #endif /* __EGG_RECENT_VIEW_GTK_H__ */
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h
+--- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h	2008-03-10 15:21:04.000000000 -0500
++++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h	2008-06-03 00:49:11.640625000 -0500
+@@ -1,6 +1,11 @@
++#ifndef __EGG_RECENT_H__
++#define __EGG_RECENT_H__
++
+ #include "egg-recent-item.h"
+ #include "egg-recent-model.h"
+ #include "egg-recent-view.h"
+ #include "egg-recent-view-bonobo.h"
+ #include "egg-recent-view-gtk.h"
+ #include "egg-recent-view-uimanager.h"
++
++#endif /* __EGG_RECENT_H__ */
