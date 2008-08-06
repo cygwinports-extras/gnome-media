@@ -1,4 +1,3 @@
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/cddb-slave2/gnet-private.h src/gnome-media-2.22.0/cddb-slave2/gnet-private.h
 --- origsrc/gnome-media-2.22.0/cddb-slave2/gnet-private.h	2008-03-10 15:21:03.000000000 -0500
 +++ src/gnome-media-2.22.0/cddb-slave2/gnet-private.h	2008-06-03 00:49:11.406250000 -0500
 @@ -68,7 +68,7 @@
@@ -10,7 +9,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x
  typedef guint32 socklen_t;
  #endif
  
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c
 --- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c	2008-03-10 15:21:04.000000000 -0500
 +++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-item.c	2008-06-03 00:49:11.421875000 -0500
 @@ -101,84 +101,6 @@
@@ -209,7 +207,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x
  
  	gnome_vfs_uri_unref (uri);
  
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c
 --- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c	2008-03-10 15:21:04.000000000 -0500
 +++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-model.c	2008-06-03 00:49:11.484375000 -0500
 @@ -29,6 +29,7 @@
@@ -969,7 +966,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x
  	
  	if (egg_recent_model_lock_file (file)) {
  		list = egg_recent_model_read (model, file);
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c
 --- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c	2008-03-10 15:21:04.000000000 -0500
 +++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.c	2008-06-03 00:49:11.562500000 -0500
 @@ -2,16 +2,19 @@
@@ -1089,7 +1085,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x
  	
  	time (&the_time);
  	rand = g_random_int ();
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h
 --- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h	2008-03-10 15:21:04.000000000 -0500
 +++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-util.h	2008-06-03 00:49:11.578125000 -0500
 @@ -3,20 +3,15 @@
@@ -1114,7 +1109,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x
  
  G_END_DECLS
  
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c
 --- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c	2008-03-10 15:21:04.000000000 -0500
 +++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.c	2008-06-03 00:49:11.593750000 -0500
 @@ -37,6 +37,15 @@
@@ -1492,7 +1486,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x
  /**
   * egg_recent_view_gtk_set_menu:
   * @view: A EggRecentViewGtk object.
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h
 --- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h	2008-03-10 15:21:04.000000000 -0500
 +++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent-view-gtk.h	2008-06-03 00:49:11.609375000 -0500
 @@ -59,6 +59,10 @@
@@ -1506,7 +1499,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x
  G_END_DECLS
  
  #endif /* __EGG_RECENT_VIEW_GTK_H__ */
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gnome-media-profiles.pc -x gnome-cd.schemas.in origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h
 --- origsrc/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h	2008-03-10 15:21:04.000000000 -0500
 +++ src/gnome-media-2.22.0/grecord/src/recent-files/egg-recent.h	2008-06-03 00:49:11.640625000 -0500
 @@ -1,6 +1,11 @@
