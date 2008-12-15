@@ -1,0 +1,10 @@
+category: Gnome Audio Video
+requires: cygwin libgnome-media-profiles0 libgconf2-devel libglade2.0-devel libglib2.0-devel libgnomeui2-devel libgstreamer0.10-devel libgtk2.0-devel gettext
+external-source: gnome-media
+sdesc: "GNOME media profiles library (development)"
+ldesc: "This package contains a suite of GNOME media tools:
+  - GNOME GStreamer-based audio mixer.
+  - ESD volume level meter.
+  - GNOME Sound Recorder.
+  - GStreamer Properties Capplet.
+  - Audio Profile library."
