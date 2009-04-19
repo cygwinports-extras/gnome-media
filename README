@@ -9,38 +9,41 @@ This package contains a suite of GNOME media tools:
   - Audio Profile library.
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  gstreamer010-plugins-base-0.10.21-2
-  gstreamer010-plugins-gconf
-  gstreamer010-plugins-oss
-  gstreamer010-plugins-ximage
-  libatk1.0_0-1.24.0-1
-  libgconf2_4-2.24.0-1
-  libgdk_pixbuf2.0_0-2.14.5-1
-  libglade2.0_0-2.6.3-2
-  libglib2.0_0-2.18.3-1
-  libgnome2_0-2.24.1-1
-  libgnomeui2_0-2.24.0-1
-  libgstreamer0.10_0-0.10.21-2
-  libgtk2.0_0-2.14.5-1
-  libintl8-0.17-2
+  cygwin-1.7.0-45
+  gstreamer0.10-plugins-gconf
+  gstreamer0.10-plugins-oss
+  gstreamer0.10-plugins-ximage
+  libatk1.0_0-1.26.0-1
+  libgcc1-4.3.2-2
+  libgconf2_4-2.26.0-1
+  libgdk_pixbuf2.0_0-2.16.0-1
+  libglade2.0_0-2.6.4-1
+  libglib2.0_0-2.20.0-1
+  libgnome2_0-2.26.0-1
+  libgnomeui2_0-2.24.1-1
+  libgstaudio0.10_0-0.10.22-10
+  libgstinterfaces0.10_0-0.10.22-10
+  libgstreamer0.10_0-0.10.22-10
+  libgtk2.0_0-2.16.0-1
+  libintl8-0.17-10
+  libxml2-2.7.3-10
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-1
-  automake1.10-1.10.1-2
+  autoconf2.5-2.63-10
+  automake1.10-1.10.1-10
   binutils-20080624-2
-  cygport-0.4.3-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  gettext-devel-0.17-2
-  gnome-common-2.24.0-1
-  gnome-doc-utils-0.14.0-1
-  intltool-0.40.5-1
-  libtool-2.2.6a-1
-  make-3.81-1
-  pkg-config-0.23a-2
-  rarian-0.8.1-1
+  cygport-0.9.6-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  gettext-devel-0.17-10
+  gnome-common-2.26.0-1
+  gnome-doc-utils-0.16.0-1
+  intltool-0.40.6-1
+  libtool-2.2.7a-12
+  make-3.81-2
+  pkg-config-0.23b-10
+  rarian-0.8.1-10
   sed-4.1.5-2
 
 Canonical website:
@@ -52,17 +55,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gnome-media-2.24.0.1-X-src.tar.bz2
+  unpack gnome-media-2.26.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gnome-media-2.24.0.1-X.cygport all
+  cygport ./gnome-media-2.26.0-X.cygport all
 
 This will create:
-  /usr/src/gnome-media-2.24.0.1-X-src.tar.bz2
-  /usr/src/gnome-media-2.24.0.1-X.tar.bz2
-  /usr/src/libgnome-media-profiles-devel-2.24.0.1-X.tar.bz2
-  /usr/src/libgnome-media-profiles0-2.24.0.1-X.tar.bz2
+  /usr/src/gnome-media-2.26.0-X-src.tar.bz2
+  /usr/src/gnome-media-2.26.0-X.tar.bz2
+  /usr/src/libgnome-media-profiles-devel-2.26.0-X.tar.bz2
+  /usr/src/libgnome-media-profiles0-2.26.0-X.tar.bz2
 
 -------------------------------------------
 
@@ -80,14 +83,13 @@ Files included in the binary package:
   /usr/share/applications/gnome-sound-recorder.desktop
   /usr/share/applications/gnome-volume-control.desktop
   /usr/share/applications/gstreamer-properties.desktop
-  /usr/share/doc/gnome-media-2.24.0.1/AUTHORS
-  /usr/share/doc/gnome-media-2.24.0.1/COPYING
-  /usr/share/doc/gnome-media-2.24.0.1/COPYING-DOCS
-  /usr/share/doc/gnome-media-2.24.0.1/ChangeLog
-  /usr/share/doc/gnome-media-2.24.0.1/INSTALL
-  /usr/share/doc/gnome-media-2.24.0.1/MAINTAINERS
-  /usr/share/doc/gnome-media-2.24.0.1/NEWS
-  /usr/share/doc/gnome-media-2.24.0.1/README
+  /usr/share/doc/gnome-media/AUTHORS
+  /usr/share/doc/gnome-media/COPYING
+  /usr/share/doc/gnome-media/COPYING-DOCS
+  /usr/share/doc/gnome-media/ChangeLog
+  /usr/share/doc/gnome-media/MAINTAINERS
+  /usr/share/doc/gnome-media/NEWS
+  /usr/share/doc/gnome-media/README
   /usr/share/gnome-sound-recorder/ui/ui.xml
   /usr/share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/C/gnome-sound-recorder.xml
@@ -96,6 +98,8 @@ Files included in the binary package:
   /usr/share/gnome/help/gnome-sound-recorder/ca/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/de/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/de/gnome-sound-recorder.xml
+  /usr/share/gnome/help/gnome-sound-recorder/en_GB/figures/grecord_window.png
+  /usr/share/gnome/help/gnome-sound-recorder/en_GB/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/es/figures/grecord_window.png
   /usr/share/gnome/help/gnome-sound-recorder/es/gnome-sound-recorder.xml
   /usr/share/gnome/help/gnome-sound-recorder/fr/figures/grecord_window.png
@@ -136,6 +140,8 @@ Files included in the binary package:
   /usr/share/gnome/help/gstreamer-properties/ca/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/de/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/de/gstreamer-properties.xml
+  /usr/share/gnome/help/gstreamer-properties/en_GB/figures/gstreamer_properties_window.png
+  /usr/share/gnome/help/gstreamer-properties/en_GB/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/es/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/es/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/fr/figures/gstreamer_properties_window.png
@@ -148,6 +154,8 @@ Files included in the binary package:
   /usr/share/gnome/help/gstreamer-properties/ru/gstreamer-properties.xml
   /usr/share/gnome/help/gstreamer-properties/sv/figures/gstreamer_properties_window.png
   /usr/share/gnome/help/gstreamer-properties/sv/gstreamer-properties.xml
+  /usr/share/gnome/help/gstreamer-properties/th/figures/gstreamer_properties_window.png
+  /usr/share/gnome/help/gstreamer-properties/th/gstreamer-properties.xml
   /usr/share/gstreamer-properties/glade/gstreamer-properties.glade
   /usr/share/gstreamer-properties/icons/gstreamer-properties.png
   /usr/share/icons/hicolor/16x16/apps/gnome-sound-recorder.png
@@ -204,6 +212,7 @@ Files included in the binary package:
   /usr/share/locale/ku/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/lt/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/lv/LC_MESSAGES/gnome-media-2.0.mo
+  /usr/share/locale/mai/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/mg/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/mk/LC_MESSAGES/gnome-media-2.0.mo
   /usr/share/locale/ml/LC_MESSAGES/gnome-media-2.0.mo
@@ -245,6 +254,7 @@ Files included in the binary package:
   /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-C.omf
   /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-ca.omf
   /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-de.omf
+  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-en_GB.omf
   /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-es.omf
   /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-fr.omf
   /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-it.omf
@@ -264,12 +274,18 @@ Files included in the binary package:
   /usr/share/omf/gstreamer-properties/gstreamer-properties-C.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-ca.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-de.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-en_GB.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-es.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-fr.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-it.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-oc.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-ru.omf
   /usr/share/omf/gstreamer-properties/gstreamer-properties-sv.omf
+  /usr/share/omf/gstreamer-properties/gstreamer-properties-th.omf
+  /usr/share/sounds/gnome/default/alerts/bark.ogg
+  /usr/share/sounds/gnome/default/alerts/drip.ogg
+  /usr/share/sounds/gnome/default/alerts/glass.ogg
+  /usr/share/sounds/gnome/default/alerts/sonar.ogg
 
 (libgnome-media-profiles0)
   /usr/bin/cyggnome-media-profiles-0.dll
@@ -278,6 +294,7 @@ Files included in the binary package:
   /usr/share/gnome-media/glade/gnome-audio-profiles.glade2
   /usr/share/gnome-media/pixmaps/chain-broken.png
   /usr/share/gnome-media/pixmaps/chain.png
+  /usr/share/gnome-media/sounds/gnome-sounds-default.xml
 
 (libgnome-media-profiles-devel)
   /usr/include/gnome-media/profiles/audio-profile-choose.h
@@ -293,33 +310,8 @@ Files included in the binary package:
 
 Port Notes:
 
------ version 2.24.0.1-1 -----
-Version bump for GNOME 2.24.
-
------ version 2.22.0-1 -----
-Version bump for GNOME 2.22.
-
------ version 2.20.1-1 -----
-Version bump for GNOME 2.20.
-
------ version 2.18.0-1 -----
-Version bump for GNOME 2.18.
-
------ version 2.16.1-1 -----
-Version bump for GNOME 2.16.
-
------ version 2.14.2-1 -----
-Version bump.
-
------ version 2.14.0-1 -----
-Version bump for GNOME 2.14.
-
------ version 2.13.91-1 -----
-Version bump for gstreamer-0.10.
-
------ version 2.13.5-1 -----
-Initial release for Cygwin.
-Includes upstream patch for gstreamer-0.10 support.
+----- version 2.26.0-1 -----
+Initial release of GNOME 2.26 for Cygwin 1.7.
 
 
 Cygwin port maintained by:
