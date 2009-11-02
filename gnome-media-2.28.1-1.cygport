@@ -2,8 +2,6 @@ inherit gnome2
 
 DESCRIPTION="GNOME GStreamer media tools suite"
 
-PATCH_URI="2.26-vpath.patch"
-
 PKG_NAMES="${PN} libgnome-media-profiles0 libgnome-media-profiles-devel"
 gnome_media_CONTENTS="etc/ usr/bin/*.exe usr/share/applications/ usr/share/doc/
                       usr/share/gnome-sound-recorder/ usr/share/gnome/
@@ -13,7 +11,4 @@ libgnome_media_profiles0_CONTENTS="usr/bin/*-0.dll usr/lib/libglade/
                                    usr/share/gnome-media/"
 libgnome_media_profiles_devel_CONTENTS="usr/include/ usr/lib/libgnome-* usr/lib/pkgconfig/"
 
-DIFF_EXCLUDES="gnome-media-profiles.pc gnome-cd.schemas.in"
-
-ACLOCAL_FLAGS="-I m4"
-CYGCONF_ARGS="--libexecdir=/usr/lib/gnome-media-2.0"
+DIFF_EXCLUDES="gnome-media-profiles.pc"

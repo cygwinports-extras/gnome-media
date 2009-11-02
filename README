@@ -9,41 +9,40 @@ This package contains a suite of GNOME media tools:
   - Audio Profile library.
 
 Runtime requirements:
-  cygwin-1.7.0-45
+  cygwin-1.7.0-62
   gstreamer0.10-plugins-gconf
   gstreamer0.10-plugins-oss
   gstreamer0.10-plugins-ximage
-  libatk1.0_0-1.26.0-1
-  libgcc1-4.3.2-2
-  libgconf2_4-2.26.0-1
-  libgdk_pixbuf2.0_0-2.16.0-1
+  libatk1.0_0-1.28.0-1
+  libcanberra-gtk0-0.22-1
+  libgcc1-4.3.4-1
+  libgconf2_4-2.28.0-1
+  libgdk_pixbuf2.0_0-2.18.3-1
   libglade2.0_0-2.6.4-1
-  libglib2.0_0-2.20.0-1
-  libgnome2_0-2.26.0-1
-  libgnomeui2_0-2.24.1-1
-  libgstaudio0.10_0-0.10.22-10
-  libgstinterfaces0.10_0-0.10.22-10
-  libgstreamer0.10_0-0.10.22-10
-  libgtk2.0_0-2.16.0-1
-  libintl8-0.17-10
-  libxml2-2.7.3-10
+  libglib2.0_0-2.22.2-1
+  libgstaudio0.10_0-0.10.25-1
+  libgstinterfaces0.10_0-0.10.25-1
+  libgstreamer0.10_0-0.10.25-1
+  libgtk2.0_0-2.18.3-1
+  libintl8-0.17-11
+  libxml2-2.7.4-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.63-10
-  automake1.10-1.10.1-10
-  binutils-20080624-2
-  cygport-0.9.6-1
+  automake1.11-1.11-10
+  binutils-2.19.51-1
+  cygport-0.9.10-1
   gawk-3.1.6-2
-  gcc4-core-4.3.2-2
-  gettext-devel-0.17-10
-  gnome-common-2.26.0-1
-  gnome-doc-utils-0.16.0-1
+  gcc4-core-4.3.4-1
+  gettext-devel-0.17-11
+  gnome-common-2.28.0-1
+  gnome-doc-utils-0.18.0-1
   intltool-0.40.6-1
-  libtool-2.2.7a-12
+  libtool-2.2.7a-14
   make-3.81-2
   pkg-config-0.23b-10
-  rarian-0.8.1-10
+  rarian-0.8.1-11
   sed-4.1.5-2
 
 Canonical website:
@@ -55,260 +54,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gnome-media-2.26.0-X-src.tar.bz2
+  unpack gnome-media-2.28.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gnome-media-2.26.0-X.cygport all
+  cygport ./gnome-media-2.28.1-X.cygport all
 
 This will create:
-  /usr/src/gnome-media-2.26.0-X-src.tar.bz2
-  /usr/src/gnome-media-2.26.0-X.tar.bz2
-  /usr/src/libgnome-media-profiles-devel-2.26.0-X.tar.bz2
-  /usr/src/libgnome-media-profiles0-2.26.0-X.tar.bz2
+  /usr/src/gnome-media-2.28.1-X-src.tar.bz2
+  /usr/src/gnome-media-2.28.1-X.tar.bz2
+  /usr/src/libgnome-media-profiles-devel-2.28.1-X.tar.bz2
+  /usr/src/libgnome-media-profiles0-2.28.1-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
-
-  /etc/gconf/schemas/gnome-audio-profiles.schemas
-  /etc/gconf/schemas/gnome-sound-recorder.schemas
-  /etc/gconf/schemas/gnome-volume-control.schemas
-  /etc/postinstall/gnome-media.sh
-  /etc/preremove/gnome-media.sh
-  /usr/bin/gnome-audio-profiles-properties.exe
-  /usr/bin/gnome-sound-recorder.exe
-  /usr/bin/gnome-volume-control.exe
-  /usr/bin/gstreamer-properties.exe
-  /usr/share/applications/gnome-sound-recorder.desktop
-  /usr/share/applications/gnome-volume-control.desktop
-  /usr/share/applications/gstreamer-properties.desktop
-  /usr/share/doc/gnome-media/AUTHORS
-  /usr/share/doc/gnome-media/COPYING
-  /usr/share/doc/gnome-media/COPYING-DOCS
-  /usr/share/doc/gnome-media/ChangeLog
-  /usr/share/doc/gnome-media/MAINTAINERS
-  /usr/share/doc/gnome-media/NEWS
-  /usr/share/doc/gnome-media/README
-  /usr/share/gnome-sound-recorder/ui/ui.xml
-  /usr/share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/C/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/C/legal.xml
-  /usr/share/gnome/help/gnome-sound-recorder/ca/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/ca/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/de/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/de/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/en_GB/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/en_GB/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/es/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/es/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/fr/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/fr/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/it/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/it/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/oc/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/oc/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/ru/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/ru/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/sv/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/sv/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-sound-recorder/uk/figures/grecord_window.png
-  /usr/share/gnome/help/gnome-sound-recorder/uk/gnome-sound-recorder.xml
-  /usr/share/gnome/help/gnome-volume-control/C/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/C/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/C/legal.xml
-  /usr/share/gnome/help/gnome-volume-control/ca/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/ca/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/de/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/de/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/es/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/es/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/fr/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/fr/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/it/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/it/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/oc/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/oc/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/ru/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/ru/gnome-volume-control.xml
-  /usr/share/gnome/help/gnome-volume-control/sv/figures/gnome-volume-control_window.png
-  /usr/share/gnome/help/gnome-volume-control/sv/gnome-volume-control.xml
-  /usr/share/gnome/help/gstreamer-properties/C/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/C/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/C/legal.xml
-  /usr/share/gnome/help/gstreamer-properties/ca/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/ca/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/de/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/de/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/en_GB/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/en_GB/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/es/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/es/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/fr/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/fr/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/it/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/it/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/oc/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/oc/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/ru/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/ru/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/sv/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/sv/gstreamer-properties.xml
-  /usr/share/gnome/help/gstreamer-properties/th/figures/gstreamer_properties_window.png
-  /usr/share/gnome/help/gstreamer-properties/th/gstreamer-properties.xml
-  /usr/share/gstreamer-properties/glade/gstreamer-properties.glade
-  /usr/share/gstreamer-properties/icons/gstreamer-properties.png
-  /usr/share/icons/hicolor/16x16/apps/gnome-sound-recorder.png
-  /usr/share/icons/hicolor/16x16/devices/gvc-3d-sound.png
-  /usr/share/icons/hicolor/16x16/devices/gvc-headphones.png
-  /usr/share/icons/hicolor/16x16/devices/gvc-line-in.png
-  /usr/share/icons/hicolor/16x16/devices/gvc-tone.png
-  /usr/share/icons/hicolor/16x16/status/audio-input-microphone-muted.png
-  /usr/share/icons/hicolor/22x22/apps/gnome-sound-recorder.png
-  /usr/share/icons/hicolor/24x24/apps/gnome-sound-recorder.png
-  /usr/share/icons/hicolor/32x32/apps/gnome-sound-recorder.png
-  /usr/share/icons/hicolor/48x48/apps/gnome-sound-recorder.png
-  /usr/share/icons/hicolor/48x48/apps/gstreamer-properties.png
-  /usr/share/icons/hicolor/scalable/apps/gnome-sound-recorder.svg
-  /usr/share/locale/am/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/as/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/az/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/be/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/be@latin/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/bg/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/bn/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/bn_IN/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/br/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/bs/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ca/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/cs/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/cy/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/da/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/de/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/dz/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/el/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/en_CA/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/en_GB/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/es/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/et/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/eu/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/fa/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/fi/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/fr/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ga/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/gl/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/gu/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/he/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/hi/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/hr/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/hu/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/id/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/it/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ja/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ka/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/kn/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ko/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ku/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/lt/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/lv/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/mai/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/mg/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/mk/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ml/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/mn/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/mr/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ms/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/nb/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ne/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/nl/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/nn/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/oc/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/or/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/pa/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/pl/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/pt/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/pt_BR/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ro/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ru/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/rw/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/si/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/sk/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/sl/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/sq/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/sr/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/sr@latin/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/sv/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/ta/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/te/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/th/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/tk/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/tr/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/uk/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/vi/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/wa/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/xh/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-C.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-ca.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-de.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-en_GB.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-es.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-fr.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-it.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-oc.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-ru.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-sv.omf
-  /usr/share/omf/gnome-sound-recorder/gnome-sound-recorder-uk.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-C.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-ca.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-de.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-es.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-fr.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-it.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-oc.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-ru.omf
-  /usr/share/omf/gnome-volume-control/gnome-volume-control-sv.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-C.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-ca.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-de.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-en_GB.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-es.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-fr.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-it.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-oc.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-ru.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-sv.omf
-  /usr/share/omf/gstreamer-properties/gstreamer-properties-th.omf
-  /usr/share/sounds/gnome/default/alerts/bark.ogg
-  /usr/share/sounds/gnome/default/alerts/drip.ogg
-  /usr/share/sounds/gnome/default/alerts/glass.ogg
-  /usr/share/sounds/gnome/default/alerts/sonar.ogg
-
-(libgnome-media-profiles0)
-  /usr/bin/cyggnome-media-profiles-0.dll
-  /usr/lib/libglade/2.0/cyggnome-media-profiles.dll
-  /usr/lib/libglade/2.0/libgnome-media-profiles.la
-  /usr/share/gnome-media/glade/gnome-audio-profiles.glade2
-  /usr/share/gnome-media/pixmaps/chain-broken.png
-  /usr/share/gnome-media/pixmaps/chain.png
-  /usr/share/gnome-media/sounds/gnome-sounds-default.xml
-
-(libgnome-media-profiles-devel)
-  /usr/include/gnome-media/profiles/audio-profile-choose.h
-  /usr/include/gnome-media/profiles/audio-profile-edit.h
-  /usr/include/gnome-media/profiles/audio-profile.h
-  /usr/include/gnome-media/profiles/audio-profiles-edit.h
-  /usr/include/gnome-media/profiles/gnome-media-profiles.h
-  /usr/lib/libgnome-media-profiles.dll.a
-  /usr/lib/libgnome-media-profiles.la
-  /usr/lib/pkgconfig/gnome-media-profiles.pc
-
-------------------
-
 Port Notes:
+
+----- version 2.28.1-1 -----
+Version bump for GNOME 2.28.
 
 ----- version 2.26.0-1 -----
 Initial release of GNOME 2.26 for Cygwin 1.7.
