@@ -2,13 +2,15 @@ inherit gnome2
 
 DESCRIPTION="GNOME GStreamer media tools suite"
 
-PKG_NAMES="${PN} libgnome-media-profiles0 libgnome-media-profiles-devel"
+PATCH_URI="2.30.0-glade3-as-needed.patch"
+
+PKG_NAMES="${PN} libgnome-media-profiles0 libgnome-media-profiles-devel glade3-gnome-media-profiles"
 gnome_media_CONTENTS="etc/ usr/bin/*.exe usr/share/applications/ usr/share/doc/
                       usr/share/gnome-sound-recorder/ usr/share/gnome/
                       usr/share/gstreamer-properties/ usr/share/icons/
                       usr/share/locale/ usr/share/omf/ usr/share/sounds/"
-libgnome_media_profiles0_CONTENTS="usr/bin/*-0.dll usr/lib/libglade/
-                                   usr/share/gnome-media/"
+libgnome_media_profiles0_CONTENTS="usr/bin/*-0.dll usr/share/gnome-media/"
 libgnome_media_profiles_devel_CONTENTS="usr/include/ usr/lib/libgnome-* usr/lib/pkgconfig/"
+glade3_gnome_media_profiles_CONTENTS="usr/*/glade3/"
 
 DIFF_EXCLUDES="gnome-media-profiles.pc"
