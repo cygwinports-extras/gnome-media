@@ -1,0 +1,14 @@
+inherit gnome2
+
+DESCRIPTION="GNOME GStreamer media tools suite"
+
+PATCH_URI="2.91.2-gettext-pkg.patch"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# provided by gnome-control-center
+	rm -fr ${D}/usr/share/gnome-media/sounds/
+	rm -fr ${D}/usr/share/sounds/
+}

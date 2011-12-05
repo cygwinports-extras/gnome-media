@@ -1,0 +1,5 @@
+category: Gnome Audio Video
+requires: GConf2 gstreamer0.10-plugins-gconf gstreamer0.10-plugins-oss gstreamer0.10-plugins-ximage libatk1.0_0 libgconf2_4 libglib2.0_0 libgnome-media-profiles3.0_0 libgstinterfaces0.10_0 libgstreamer0.10_0 libgtk3_0 libintl8
+sdesc: "GNOME sound recorder and GStreamer properties dialog"
+ldesc: "This package contains the GNOME Sound Recorder and GStreamer 
+Properties Capplet."

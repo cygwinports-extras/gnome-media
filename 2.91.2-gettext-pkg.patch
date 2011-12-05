@@ -1,0 +1,11 @@
+--- origsrc/gnome-media-2.91.2/configure.ac	2010-10-30 19:22:04.686813300 -0500
++++ src/gnome-media-2.91.2/configure.ac	2011-11-25 02:29:55.041579900 -0600
+@@ -148,7 +148,7 @@ dnl=====================================
+ dnl i18n
+ dnl=======================================================================
+ 
+-GETTEXT_PACKAGE=gnome-media-2.0
++GETTEXT_PACKAGE=gnome-media-3.0
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Define to the Gettext package name])
+ AM_GLIB_GNU_GETTEXT
